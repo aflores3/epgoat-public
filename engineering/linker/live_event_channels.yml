@@ -1,0 +1,122 @@
+version: 1
+matchers:
+  # --- ESPN family & US college ---
+  - name: espnplus
+    id_pattern: "^ESPNPLUS-\\d+$"
+    groups: ["USA | ESPN+", "ESPN+"]
+    enabled: true
+    sports: [ncaaf, ncaab, nhl, mlb, soccer, misc]
+
+  - name: sec_acc_extra
+    id_pattern: "^(SECPLUS|ACCX)-\\d+$"
+    groups: ["SEC+ / ACC extra", "SEC+", "ACCNX"]
+    enabled: true
+    sports: [ncaaf, ncaab, misc]
+
+  - name: big10plus
+    id_pattern: "^BIG10PLUS-\\d+$"
+    groups: ["BIG10+", "BTN+"]
+    enabled: true
+    sports: [ncaaf, ncaab, misc]
+
+  - name: paramout_prime_peacock
+    id_pattern: "^(PARAMOUNTPLUS|PRIMEUS|PEACOCK(-PPV)?)-\\d+$"
+    groups: ["Paramount+", "Prime US", "Peacock", "US|Peacock PPV"]
+    enabled: true
+    sports: [soccer, ncaab, misc]
+
+  # --- US major leagues ---
+  - name: nba_all
+    id_pattern: "^(NBA|USA-REAL-NBA)-\\d+$"
+    enabled: true
+    sports: [nba]
+
+  - name: nhl_all
+    id_pattern: "^(NHL(|-PIPE)|USA-REAL-NHL)-\\d+$"
+    enabled: true
+    sports: [nhl]
+
+  - name: mlb_all
+    id_pattern: "^(MLB|USA-REAL-MLB|MiLB)-\\d+$"
+    enabled: true
+    sports: [mlb]
+
+  - name: wnba
+    id_pattern: "^WNBA-\\d+$"
+    enabled: true
+    sports: [wnba]
+
+  # --- Soccer families ---
+  - name: mls
+    id_pattern: "^(MLS|MLS-NEXT-PRO|USA-MLS|MLS-ES)-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  - name: uefa
+    id_pattern: "^(UEFA-(CL|EL|ECL)|UEFA-FIFA)-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  - name: top5_europe
+    id_pattern: "^(SERIEA|LALIGA|BUNDESLIGA|LIGUE1)-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  - name: intl_soccer_services
+    id_pattern: "^(FANATIZ|GAAGO|LOI|SETANTA|VIAPLAY-NO)-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  - name: ussf
+    id_pattern: "^USA-SOCCER-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  - name: friendlies
+    id_pattern: "^FRIENDLY-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  # --- Motorsports / niche / combat ---
+  - name: floracing
+    id_pattern: "^(FLOSPORTS|FLORACING|FLOFOOTBALL)-\\d+$"
+    enabled: true
+    sports: [motorsport, misc]
+
+  - name: dirtvision
+    id_pattern: "^DIRTVISION-EVENT-\\d+$"
+    enabled: true
+    sports: [motorsport]
+
+  - name: tennis_fiba
+    id_pattern: "^(TENNIS|TENNISTV|FIBA)-\\d+$"
+    enabled: true
+    sports: [tennis, basketball]
+
+  - name: triller_clubber
+    id_pattern: "^(TRILLERTV-EVENT|CLUBBER)-\\d+$"
+    enabled: true
+    sports: [boxing, mma]
+
+  - name: national_league_tv
+    id_pattern: "^NATIONAL-LEAGUE-TV-\\d+$"
+    enabled: true
+    sports: [soccer]
+
+  # --- Asia / ANZ / premium ---
+  - name: now_hk
+    id_pattern: "^NOW-HK-SPORTS-4K-\\d+$"
+    enabled: true
+    sports: [soccer, misc]
+
+  - name: stan_sg_hub
+    id_pattern: "^(STAN-SPORT-EVENT-4K|HUB-SPORTS|HUB-PREMIER)-\\d+$"
+    enabled: true
+    sports: [soccer, rugby, misc]
+
+  # --- Generic catch-all (last) ---
+  - name: live_event_generic
+    id_pattern: "^LIVE-EVENT-\\d+$"
+    enabled: true
+    sports: [misc]
+
