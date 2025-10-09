@@ -1,157 +1,478 @@
 #!/usr/bin/env python3
-import argparse, re, sys, json, html, os
-from datetime import datetime, timedelta, date
-from zoneinfo import ZoneInfo
-from urllib.request import urlopen, Request
-from urllib.error import HTTPError, URLError
+# -*- coding: utf-8 -*-
+
+"""
+EPGOAT Linker Prototype — Prefix-only, API-OFF, filename-driven scheduling
+
+- Strictly filters channels by an allowed prefix list (tolerant of numbers/symbols after the prefix).
+- No external APIs (by design). Event timing is parsed from the channel name if present.
+- Event detection = "payload beyond the shell":
+    Shell = <PREFIX> + optional separators + optional number + optional badge + optional delimiter.
+    If anything meaningful remains after removing the shell, it's an Event (unless it's in a fluff ignore-list).
+- Special-case: "Peacock 01: Studio" is treated as GENERIC per your instruction; otherwise "Studio/Pregame/Postgame"
+  payloads are treated as Event (Q3).
+
+Scheduling for a target DATE (default: today in America/Chicago):
+  * GENERIC channel (no meaningful payload): fill the day with 2-hour "No Programming Today." blocks.
+  * EVENT channel:
+      - If a time is parsed AND it's on the target date:
+            00:00 → event_start      : "Airing Next: <Title> @ <... CT>"
+            event_start → +180 mins  : "❗ <Title> ❗"
+            remainder of day         : 2-hour "No Programming Today."
+      - If a time is parsed BUT it's NOT on the target date (Q5=A):
+            Whole day: "Airing Next: <Title> @ <... CT>"
+      - If NO time is parsed (Q2=A):
+            Whole day: "Airing Next: <Title> (Time TBA)"
+            NOTE: In the future, we'll restore API lookups to resolve exact times when TBA.  <-- per your request
+
+Outputs:
+  - XMLTV (UTC timestamps)
+  - CSV audit for processed channels only
+"""
+
+from __future__ import annotations
+import argparse
+import csv
+import datetime as dt
+import hashlib
+import json
+import re
+import sys
+import xml.sax.saxutils as saxutils
+
 try:
-    import yaml
+    from zoneinfo import ZoneInfo  # Python 3.9+
 except Exception:
-    yaml = None
+    ZoneInfo = None
 
-LOCAL_DEFAULT = "America/Chicago"
-UTC = ZoneInfo("UTC")
+# ----------------------------
+# Allowed prefixes (exactly from your list)
+# ----------------------------
+ALLOWED_PREFIXES = [
+    "Now HK Sports 4K 1 UHD","NCAAF","NFL Game Pass","LIVE EVENT","[PPV EVENT","NBA","USA Real NBA",
+    "NHL","NHL |","USA Real NHL","MLB","USA Real MLB","MiLB","MLS","MLS NEXT PRO","USA | MLS",
+    "MLS Espanol","USA Soccer","WNBA","Paramount+","ESPN+","SEC+ / ACC extra","Flo Sports","Flo Racing",
+    "Flo Football","Prime US","Peacock","US|Peacock PPV","BIG10+","NCAAB","NCAAW B","NCAA Softball",
+    "NJCAA Men's Basketball","Dirtvision : EVENT","Fanatiz","Serie A","La Liga","Bundesliga","Ligue1",
+    "UEFA Champions League","UEFA Europa League","UEFA Europa Conf. League","UEFA/FIFA",
+    "National League TV","FRIENDLY","TrillerTV Event","Hub Sports","Hub Premier","STAN SPORT EVENT",
+    "Tennis","Tennis TV","GAAGO : GAME","LOI GAME","Clubber","FIBA","Setanta Sports",
+]
 
-def http_get_json(url, headers=None):
-    try:
-        req = Request(url, headers=headers or {"User-Agent":"EPGOAT-Linker/1.0"})
-        with urlopen(req, timeout=20) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except (HTTPError, URLError, TimeoutError, ValueError) as e:
-        print(f"[warn] http_get_json failed: {url} -> {e}", file=sys.stderr)
-        return {}
+# Compile tolerant "shell" patterns for each prefix.
+def build_prefix_regex(prefix: str) -> re.Pattern:
+    esc = re.escape(prefix)
+    # Allow optional separators, optional number (ASCII/full-width), optional ⓧ, optional delimiter, trailing spaces.
+    tail = r"(?:\s*[|/])?\s*(?:[0-9\uFF10-\uFF19]+)?\s*(?:ⓧ)?\s*(?:[:\-\|\uFF1A])?\s*"
+    return re.compile(r"^" + esc + tail, re.IGNORECASE | re.UNICODE)
 
-def parse_m3u(path):
-    out = []
-    extinf = None
-    with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        for line in f:
-            line = line.rstrip("\n")
-            if line.startswith("#EXTINF"):
-                extinf = line
-            elif line and not line.startswith("#"):
-                url = line.strip()
-                if extinf:
-                    def _find_attr(s, key):
-                        m = re.search(rf'{key}="([^"]+)"', s)
-                        return m.group(1).strip() if m else None
-                    tvg_id = _find_attr(extinf, "tvg-id")
-                    tvg_name = _find_attr(extinf, "tvg-name")
-                    group = _find_attr(extinf, "group-title")
-                    title = extinf.split(",", 1)[1].strip() if "," in extinf else tvg_name or "Unknown"
-                    logo = _find_attr(extinf, "tvg-logo")
-                    out.append({"id": tvg_id or re.sub(r"[^A-Za-z0-9_]+","-", title).strip("-"),
-                                "title": title, "group": group, "logo": logo, "url": url})
-                extinf = None
-    return out
+PREFIX_PATTERNS = [(p, build_prefix_regex(p)) for p in ALLOWED_PREFIXES]
 
-def load_live_cfg(path):
-    if yaml is None:
-        raise SystemExit("PyYAML is required. Run: pip install pyyaml")
-    with open(path, "r", encoding="utf-8") as fh:
-        doc = yaml.safe_load(fh)
-    matchers = []
-    for m in doc.get("matchers", []):
-        if not m.get("enabled", True): continue
+def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None]:
+    n = (name or "").strip()
+    for prefix, rx in PREFIX_PATTERNS:
+        m = rx.match(n)
+        if m:
+            return True, prefix, m
+    return False, None, None
+
+# ----------------------------
+# Fluff/Ignore payload tokens (treated as GENERIC if they're all you see)
+# You said "trust your judgement" — tuned to avoid false events.
+# ----------------------------
+FLUFF_TOKENS = {
+    "LIVE","TEST","FHD","UHD","HEVC","EN","ES","ALT","MULTI","BACKUP","FEED","EVENT","STREAM",
+    "1080P","2160P","4K","HDR","SD","HD","H264","H265","AAC","AC3","EAC3",
+}
+
+# Words that *usually* indicate real content (treated as event if present),
+# but we will honor your explicit exception for Peacock:Studio below.
+CONTENT_HINTS = {"STUDIO","PREGAME","POSTGAME","SHOW","MATCH","GAME","VS","RACE","REPLAY","LIVEBLOG"}
+
+# Special-case overrides (prefix -> set of exact payloads considered GENERIC)
+SPECIAL_GENERIC_EXCEPTIONS = {
+    "Peacock": {"STUDIO"},
+}
+
+# ----------------------------
+# Optional time parsing (NOT required to be an event)
+# We try several lightweight forms if present; otherwise we stay time-less.
+# ----------------------------
+EVENT_TIME_RXES = [
+    # "Oct 09 08:55 AM ET" or "Oct 9 8:55pm CT"  (month + day + time + AM/PM + TZ)
+    re.compile(r"([A-Za-z]{3})\s+(\d{1,2})\s+(\d{1,2}):(\d{2})\s*(AM|PM)\s*([A-Za-z]{1,4})", re.IGNORECASE),
+
+    # NEW: "07:30 PM ET"  (time + AM/PM + TZ; no date)
+    re.compile(r"(\d{1,2}):(\d{2})\s*(AM|PM)\s*([A-Za-z]{1,4})", re.IGNORECASE),
+
+    # "10/09 20:00 CET"  (MM/DD + 24h time + TZ)
+    re.compile(r"(\d{1,2})/(\d{1,2})\s+(\d{1,2}):(\d{2})\s*([A-Za-z]{1,4})", re.IGNORECASE),
+
+    # "20:00 ET"  (24h time + TZ; no date)
+    re.compile(r"(\d{1,2}):(\d{2})\s*([A-Za-z]{1,4})", re.IGNORECASE),
+
+    # "8pm PT"  (hour + AM/PM + TZ; no minutes, no date)
+    re.compile(r"(\d{1,2})\s*(AM|PM)\s*([A-Za-z]{1,4})", re.IGNORECASE),
+]
+
+
+MONTHS = {m: i for i, m in enumerate(
+    ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], start=1
+)}
+
+TZ_TO_IANA = {
+    "ET":"America/New_York","EST":"America/New_York","EDT":"America/New_York",
+    "CT":"America/Chicago","CST":"America/Chicago","CDT":"America/Chicago",
+    "MT":"America/Denver","MST":"America/Denver","MDT":"America/Denver",
+    "PT":"America/Los_Angeles","PST":"America/Los_Angeles","PDT":"America/Los_Angeles",
+    "UTC":"UTC","GMT":"UTC",
+}
+
+def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.date) -> dt.datetime | None:
+    """
+    Try to find a time in the payload; normalize to Central if found.
+    For patterns without an explicit date, we anchor to the provided date_context (the --date).
+    """
+    text = payload.strip()
+    for rx in EVENT_TIME_RXES:
+        m = rx.search(text)
+        if not m:
+            continue
+
         try:
-            pat = re.compile(m["id_pattern"], re.IGNORECASE)
-        except Exception as e:
-            print(f"[warn] bad regex in {m.get('name')}: {e}", file=sys.stderr); continue
-        matchers.append({"name": m.get("name"), "pat": pat, "groups": [g.lower() for g in m.get("groups", [])]})
-    return matchers
+            if rx is EVENT_TIME_RXES[0]:
+                # "Oct 09 08:55 AM ET"
+                mon_abbr, day, hh, mm, ampm, tz_abbr = m.groups()
+                mon = MONTHS.get(mon_abbr[:3].title())
+                if not mon:
+                    continue
+                hour = int(hh) % 12
+                if ampm.upper() == "PM": hour += 12
+                minute = int(mm)
+                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
+                src = ZoneInfo(tz)
+                local = dt.datetime(year, mon, int(day), hour, minute, 0, tzinfo=src)
+                return local.astimezone(central)
 
-def split_vs(title):
-    m = re.split(r"\s+vs\.?\s+|\s+v\.?\s+", title, flags=re.IGNORECASE)
-    return m if len(m)==2 else None
+            elif rx is EVENT_TIME_RXES[1]:
+                # "07:30 PM ET" (no date → use date_context)
+                hh, mm, ampm, tz_abbr = m.groups()
+                hour = int(hh) % 12
+                if ampm.upper() == "PM": hour += 12
+                minute = int(mm)
+                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
+                src = ZoneInfo(tz)
+                local = dt.datetime(date_context.year, date_context.month, date_context.day, hour, minute, 0, tzinfo=src)
+                return local.astimezone(central)
 
-def is_live_event_channel(ch, matchers):
-    cid = (ch.get("id") or "").strip()
-    grp = (ch.get("group") or "").lower()
-    title = (ch.get("title") or "").lower()
-    for m in matchers:
-        if cid and m["pat"].match(cid):
-            return True, m["name"]
-    for m in matchers:
-        if any(g in grp for g in m["groups"]):
-            return True, m["name"]
-    if split_vs(title):
-        return True, "vs-fallback"
-    return False, None
+            elif rx is EVENT_TIME_RXES[2]:
+                # "10/09 20:00 CET"
+                mon, day, hh, mm, tz_abbr = m.groups()
+                hour = int(hh); minute = int(mm)
+                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
+                src = ZoneInfo(tz)
+                local = dt.datetime(year, int(mon), int(day), hour, minute, 0, tzinfo=src)
+                return local.astimezone(central)
 
-def infer_duration_minutes(title):
-    t = title.lower()
-    if any(k in t for k in ["mlb","nhl","nba","wnba","nfl","ncaaf","game","postseason","playoffs"]): return 180
-    if any(k in t for k in ["uefa","premier","bundesliga","la liga","serie a"," vs "," v "]): return 120
-    if any(k in t for k in ["show","pregame","postgame","media day","weekly","buzz","rundown"]): return 60
-    return 120
+            elif rx is EVENT_TIME_RXES[3]:
+                # "20:00 ET" (no date → use date_context)
+                hh, mm, tz_abbr = m.groups()
+                hour = int(hh); minute = int(mm)
+                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
+                src = ZoneInfo(tz)
+                local = dt.datetime(date_context.year, date_context.month, date_context.day, hour, minute, 0, tzinfo=src)
+                return local.astimezone(central)
 
-def xmltv_dt(dt_utc): return dt_utc.strftime("%Y%m%d%H%M%S +0000")
+            else:
+                # "8pm PT" (no minutes, no date → use date_context)
+                hh, ampm, tz_abbr = m.groups()
+                hour = int(hh) % 12
+                if ampm.upper() == "PM": hour += 12
+                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
+                src = ZoneInfo(tz)
+                local = dt.datetime(date_context.year, date_context.month, date_context.day, hour, 0, 0, tzinfo=src)
+                return local.astimezone(central)
 
+        except Exception:
+            continue
+
+    return None
+
+
+# ----------------------------
+# XML helpers
+# ----------------------------
+def xml_esc(s: str) -> str:
+    return saxutils.escape(s or "", {'"': "&quot;"})
+
+def chan_id(entry) -> str:
+    # Collision-safe: display/tvg name + stable URL token
+    base = (entry.tvg_id or entry.tvg_name or entry.display_name or "channel").strip()
+    base = re.sub(r"\s+", "_", base)
+    tok = hashlib.sha1(entry.url.encode("utf-8")).hexdigest()[:8]
+    return f"{base}__{tok}"
+
+def fmt_xmltv_dt(dt_obj: dt.datetime) -> str:
+    return dt_obj.astimezone(dt.timezone.utc).strftime("%Y%m%d%H%M%S +0000")
+
+# ----------------------------
+# M3U parsing
+# ----------------------------
+class M3UEntry:
+    def __init__(self, attrs: dict, display_name: str, url: str):
+        self.attrs = attrs
+        self.display_name = display_name
+        self.url = url
+    @property
+    def tvg_id(self): return self.attrs.get("tvg-id")
+    @property
+    def tvg_name(self): return self.attrs.get("tvg-name")
+    @property
+    def group_title(self): return self.attrs.get("group-title")
+    @property
+    def tvg_logo(self): return self.attrs.get("tvg-logo")
+
+def parse_extinf_attrs(info_line: str):
+    if not info_line.startswith("#EXTINF"):
+        return {}, info_line.strip()
+    try:
+        header, disp = info_line.split(",", 1)
+    except ValueError:
+        header, disp = info_line, ""
+    attrs = {k.lower(): v for k, v in re.findall(r'([\w\-]+)="([^"]*)"', header)}
+    return attrs, disp.strip()
+
+def parse_m3u(path: str):
+    lines = []
+    if path.startswith("http://") or path.startswith("https://"):
+        import urllib.request
+        with urllib.request.urlopen(path) as resp:
+            lines = resp.read().decode("utf-8", "replace").splitlines()
+    else:
+        with open(path, "r", encoding="utf-8", errors="replace") as f:
+            lines = f.read().splitlines()
+
+    entries = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.startswith("#EXTINF"):
+            attrs, disp = parse_extinf_attrs(line)
+            url, j = "", i + 1
+            while j < len(lines):
+                nxt = lines[j].strip(); j += 1
+                if not nxt or nxt.startswith("#"): continue
+                url = nxt; break
+            if url:
+                entries.append(M3UEntry(attrs, disp, url))
+            i = j
+        else:
+            i += 1
+    return entries
+
+# ----------------------------
+# Classification helpers
+# ----------------------------
+def classify_channel(name: str, matched_prefix: str) -> tuple[str, str]:
+    """
+    Returns (classification, payload).
+    classification: "generic" or "event"
+    payload: the part after the shell (may be "")
+    """
+    ok, pref, m = match_prefix_and_shell(name)
+    if not ok or not m:
+        return "generic", ""
+
+    payload = name[m.end():].strip()
+
+    if not payload:
+        return "generic", ""
+
+    # Token normalize
+    payload_upper = re.sub(r"\s+", " ", payload).strip().upper()
+
+    # Special-case generic exceptions like "Peacock : Studio"
+    if matched_prefix and matched_prefix in SPECIAL_GENERIC_EXCEPTIONS:
+        if payload_upper in SPECIAL_GENERIC_EXCEPTIONS[matched_prefix]:
+            return "generic", payload
+
+    # If payload is pure fluff tokens (or token + punctuation), treat as generic
+    tokens = [t for t in re.split(r"[^A-Z0-9]+", payload_upper) if t]
+    if tokens and all(t in FLUFF_TOKENS for t in tokens):
+        return "generic", payload
+
+    # Otherwise, it's an event (even if time is missing)
+    return "event", payload
+
+# ----------------------------
+# Programme building
+# ----------------------------
+def add_block(programs, cid, title, start_local, end_local, desc=""):
+    programs.setdefault(cid, []).append({
+        "title": title,
+        "start": start_local,
+        "end": end_local,
+        "desc": desc,
+    })
+
+def fill_no_programming(programs, cid, day_start, day_end, block_minutes=120):
+    cur = day_start
+    while cur < day_end:
+        nxt = min(cur + dt.timedelta(minutes=block_minutes), day_end)
+        add_block(programs, cid, "No Programming Today.", cur, nxt)
+        cur = nxt
+
+def build_xmltv(processed, programs):
+    out = []
+    out.append('<?xml version="1.0" encoding="UTF-8"?>')
+    out.append('<tv generator-info-name="EPGOAT-Linker-FilenameMode">')
+    # channels
+    seen = set()
+    for e in processed:
+        cid = chan_id(e)
+        if cid in seen: continue
+        seen.add(cid)
+        disp = e.tvg_name or e.display_name or cid
+        out.append(f'  <channel id="{xml_esc(cid)}">')
+        out.append(f'    <display-name lang="en">{xml_esc(disp)}</display-name>')
+        if e.group_title:
+            out.append(f'    <category lang="en">{xml_esc(e.group_title)}</category>')
+        if e.tvg_logo:
+            out.append(f'    <icon src="{xml_esc(e.tvg_logo)}" />')
+        out.append('  </channel>')
+    # programmes
+    for e in processed:
+        cid = chan_id(e)
+        for prog in programs.get(cid, []):
+            out.append(
+                f'  <programme start="{fmt_xmltv_dt(prog["start"])}" stop="{fmt_xmltv_dt(prog["end"])}" channel="{xml_esc(cid)}">'
+            )
+            out.append(f'    <title lang="en">{xml_esc(prog["title"])}</title>')
+            if prog.get("desc"):
+                out.append(f'    <desc lang="en">{xml_esc(prog["desc"])}"</desc>')
+            out.append('  </programme>')
+    out.append('</tv>')
+    return "\n".join(out)
+
+# ----------------------------
+# Main
+# ----------------------------
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--m3u", required=True)
-    ap.add_argument("--out", required=True)
-    ap.add_argument("--cfg", required=True)
-    ap.add_argument("--date", default=date.today().isoformat())
-    ap.add_argument("--tz", default=LOCAL_DEFAULT)
+    ap = argparse.ArgumentParser(description="EPGOAT filename-only EPG (APIs off, prefix filter)")
+    ap.add_argument("--m3u", required=True, help="Path/URL to input M3U")
+    ap.add_argument("--out-xmltv", required=True, help="XMLTV output path")
+    ap.add_argument("--csv", help="Audit CSV path")
+    ap.add_argument("--tz", default="America/Chicago", help="IANA timezone for schedule (e.g., America/Chicago)")
+    ap.add_argument("--date", help="Target date YYYY-MM-DD (default: today in tz)")
+    ap.add_argument("--event-duration-min", type=int, default=180, help="Event duration when time is known (minutes)")
     args = ap.parse_args()
 
-    local_tz = ZoneInfo(args.tz); the_day = date.fromisoformat(args.date)
-    channels = parse_m3u(args.m3u)
-    matchers = load_live_cfg(args.cfg)
+    if ZoneInfo is None:
+        print("ERROR: Python 3.9+ with zoneinfo required.", file=sys.stderr); sys.exit(2)
+    try:
+        central = ZoneInfo(args.tz)
+    except Exception:
+        print(f"ERROR: Invalid timezone '{args.tz}'", file=sys.stderr); sys.exit(2)
 
-    # Filter channels
-    live_channels = []; counts = {}
-    for ch in channels:
-        ok, tag = is_live_event_channel(ch, matchers)
+    now_central = dt.datetime.now(tz=central)
+    if args.date:
+        try:
+            tgt_date = dt.date.fromisoformat(args.date)
+        except ValueError:
+            print("ERROR: --date must be YYYY-MM-DD", file=sys.stderr); sys.exit(2)
+    else:
+        tgt_date = now_central.date()
+
+    day_start = dt.datetime(tgt_date.year, tgt_date.month, tgt_date.day, 0, 0, 0, tzinfo=central)
+    day_end   = day_start + dt.timedelta(days=1)
+
+    # Parse M3U
+    entries = parse_m3u(args.m3u)
+
+    # Filter by allowed prefixes
+    processed = []
+    matched_prefixes = []
+    for e in entries:
+        disp = (e.tvg_name or e.display_name or "").strip()
+        ok, pref, _ = match_prefix_and_shell(disp)
         if ok:
-            live_channels.append(ch)
-            counts[tag] = counts.get(tag, 0) + 1
-    print("[info] live-event matches:", counts, file=sys.stderr)
+            processed.append(e)
+            matched_prefixes.append(pref)
 
-    # Build simple pre/live/post blocks using heuristic start 7:30pm local (can be replaced by league API lookups)
-    from datetime import datetime, timedelta
-    programmes = {ch["id"]: [] for ch in live_channels}
-    for ch in live_channels:
-        ch_id = ch["id"]; title = ch["title"]
-        sod_local = datetime(the_day.year,the_day.month,the_day.day,0,0,tzinfo=local_tz)
-        start_local = datetime(the_day.year,the_day.month,the_day.day,19,30,tzinfo=local_tz)
-        end_local = start_local + timedelta(minutes=infer_duration_minutes(title))
-        eod_local = datetime(the_day.year,the_day.month,the_day.day,23,59,59,tzinfo=local_tz)
+    programs = {}
+    # Build programs per channel
+    for e, pref in zip(processed, matched_prefixes):
+        cid = chan_id(e)
+        disp = (e.tvg_name or e.display_name or cid).strip()
 
-        # pre
-        programmes[ch_id].append({"start": xmltv_dt(sod_local.astimezone(ZoneInfo("UTC"))),
-                                  "stop": xmltv_dt(start_local.astimezone(ZoneInfo("UTC"))),
-                                  "title": f"Next event: {start_local.strftime('%Y-%m-%d @ %-I:%M %p Central')}",
-                                  "desc": "Upcoming live event on this channel."})
-        # live
-        programmes[ch_id].append({"start": xmltv_dt(start_local.astimezone(ZoneInfo("UTC"))),
-                                  "stop": xmltv_dt(end_local.astimezone(ZoneInfo("UTC"))),
-                                  "title": title, "category":"Sports",
-                                  "desc": "Live event (heuristic).", "live": True})
-        # post
-        programmes[ch_id].append({"start": xmltv_dt(end_local.astimezone(ZoneInfo("UTC"))),
-                                  "stop": xmltv_dt(eod_local.astimezone(ZoneInfo("UTC"))),
-                                  "title": "No programming", "desc":"End of scheduled events for today."})
+        classification, payload = classify_channel(disp, pref)
 
-    parts = ['<?xml version="1.0" encoding="UTF-8"?>','<tv generator-info-name="EPGOAT-Linker" generator-info-url="https://example.org">']
-    for ch in live_channels:
-        cid = ch["id"]; parts.append(f'  <channel id="{html.escape(cid)}">')
-        parts.append(f'    <display-name>{html.escape(ch["title"])}</display-name>')
-        if ch.get("logo"): parts.append(f'    <icon src="{html.escape(ch["logo"])}" />')
-        parts.append('  </channel>')
-    for cid, plist in programmes.items():
-        for p in plist:
-            parts.append(f'  <programme start="{p["start"]}" stop="{p["stop"]}" channel="{html.escape(cid)}">')
-            parts.append(f'    <title>{html.escape(p["title"])}')
-            parts.append('</title>')
-            if p.get("category"): parts.append(f'    <category>{html.escape(p["category"])}</category>')
-            if p.get("desc"): parts.append(f'    <desc>{html.escape(p["desc"])}</desc>')
-            if p.get("live"): parts.append('    <live/>')
-            parts.append('  </programme>')
-    parts.append('</tv>')
-    with open(args.out, "w", encoding="utf-8") as fh: fh.write("\n".join(parts))
-    print(f"Wrote XMLTV: {args.out} (channels={len(live_channels)})")
+        if classification == "generic":
+            fill_no_programming(programs, cid, day_start, day_end, block_minutes=120)
+            continue
+
+        # Event: try to parse a time; but time is optional
+        # We'll try to find a time in payload. If missing, we do all-day "Airing Next (TBA)" (Q2=A).
+        event_start_ct = try_parse_time(payload, year=tgt_date.year, central=central, date_context=tgt_date)
+
+        if event_start_ct:
+            # If the parsed time maps to a different date than target, show all-day "Airing Next @ ..."
+            if event_start_ct.date() != tgt_date:
+                airing = f"Airing Next: {payload.strip()} @ {event_start_ct.strftime('%b %d %I:%M %p')} CT"
+                add_block(programs, cid, airing, day_start, day_end)
+                continue
+
+            # Today's event:
+            # 1) Midnight -> Event start
+            if event_start_ct > day_start:
+                airing = f"Airing Next: {payload.strip()} @ {event_start_ct.strftime('%b %d %I:%M %p')} CT"
+                add_block(programs, cid, airing, day_start, event_start_ct)
+
+            # 2) Event block (default 180 mins)
+            event_end = min(event_start_ct + dt.timedelta(minutes=args.event_duration_min), day_end)
+            live_title = f"❗ {payload.strip()} ❗"
+            add_block(programs, cid, live_title, event_start_ct, event_end)
+
+            # 3) Remainder of day
+            if event_end < day_end:
+                fill_no_programming(programs, cid, event_end, day_end, block_minutes=120)
+
+        else:
+            # No time parsed → all-day "Airing Next (Time TBA)"
+            # NOTE: Future enhancement: use API data to resolve TBA times when available.
+            airing = f"Airing Next: {payload.strip()} (Time TBA)"
+            add_block(programs, cid, airing, day_start, day_end)
+
+    # Write XMLTV
+    xmltv = build_xmltv(processed, programs)
+    with open(args.out_xmltv, "w", encoding="utf-8") as f:
+        f.write(xmltv)
+
+    # Write CSV audit (processed-only)
+    if args.csv:
+        with open(args.csv, "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow([
+                "tvg_id","tvg_name","display_name","group_title","tvg_logo","url",
+                "channel_id","matched_prefix","classification","payload",
+                "has_time","event_start_ct","event_duration_min","target_date"
+            ])
+            for e, pref in zip(processed, matched_prefixes):
+                cid = chan_id(e)
+                disp = (e.tvg_name or e.display_name or cid).strip()
+                classification, payload = classify_channel(disp, pref)
+                start_ct = try_parse_time(payload, year=tgt_date.year, central=ZoneInfo(args.tz), date_context=tgt_date) if classification=="event" else None
+                w.writerow([
+                    e.tvg_id, e.tvg_name, e.display_name, e.group_title, e.tvg_logo, e.url,
+                    cid, pref, classification, payload.strip(),
+                    bool(start_ct),
+                    start_ct.strftime("%Y-%m-%d %I:%M %p %Z") if start_ct else "",
+                    args.event_duration_min if start_ct else "",
+                    tgt_date.isoformat(),
+                ])
+
+    print(f"[OK] XMLTV: {args.out_xmltv}")
+    if args.csv: print(f"[OK] Audit CSV: {args.csv}")
 
 if __name__ == "__main__":
     main()
