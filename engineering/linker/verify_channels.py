@@ -13,9 +13,10 @@ KNOWN_FAMILIES = [
     r'^BIG10\+ \d+:',
     r'^Bundesliga \d+:',
     r'^DAZN BE \d+:',
-    r'^DAZN CA \d+:',
-    r'^EPL \d+:',
-    r'^ESPN\+ \d+',
+    r'^DAZN CA \d+:?',          # Colon optional
+    r'^EPL \d+:?',              # EPL with optional colon
+    r'^EPL\d+',                 # EPL without space
+    r'^ESPN\+ \d+:?',           # ESPN+ with optional colon
     r'^Fanatiz \d+:',
     r'^Flo Football \d+:',
     r'^Flo Racing \d+:',
@@ -36,7 +37,7 @@ KNOWN_FAMILIES = [
     r'^Paramount\+ \d+:',
     r'^Peacock \d+:',
     r'^Serie A \d+:',
-    r'^Sportsnet\+ \d+:',
+    r'^Sportsnet\+ \d+:?',      # Colon optional
     r'^Tennis \d+:',
     r'^TSN\+ \d+:',
     r'^UEFA Champions League \d+:',
@@ -48,18 +49,70 @@ KNOWN_FAMILIES = [
     r'^Prime US \d+:',           # Prime Video sports events
     r'^Paramount\+ \d+ :',       # Paramount+ numbered channels (with space before colon)
     r'^Amazon US:',              # Amazon streaming channels
+    r'^Peacock \d+:',            # Peacock events
+    r'^SEC\+ / ACC extra \d+',   # SEC+/ACC extra events
+    r'^Fubo Sports Network \d+', # Fubo Sports Network events
 
-    # Sports Leagues (additional variations)
+    # NFL Variations
     r'^MiLB \d+:',              # Minor League Baseball (uppercase i)
     r'^MILB \d+:',              # Minor League Baseball (uppercase I)
     r'^MLS NEXT PRO \d+',       # MLS development league
     r'^MLS \d+ \|',             # MLS with pipe separator
+    r'^MLS Espanolⓧ \d+',       # MLS Spanish
     r'^NCAAF \d+ :',            # NCAAF with space before colon
+    r'^NCAAB \d+:',             # NCAA Basketball
+    r'^NCAAW B \d+:',           # NCAA Women's Basketball
+    r'^NCAA Softball \d+:',     # NCAA Softball
+    r'^NJCAA Men\'s Basketball \d+:', # NJCAA Men's Basketball
+    r'^NJCAA Women\'s Basketball \d+:', # NJCAA Women's Basketball
     r'^WNBA \d+:?',             # WNBA channels (colon optional)
     r'^NFL \d+',                # NFL numbered event channels
+    r'^NFL Game Pass \d+',      # NFL Game Pass
+    r'^NFL Multi Screen / HDR \d+', # NFL Multi Screen
+    r'^NFL\s+\|\s+\d+',         # NFL with pipe separator
     r'^NHL: [A-Z]',             # NHL team-specific channels
     r'^UFC \d+',                # UFC numbered event channels
     r'^LIVE EVENT \d+',         # Generic live event channels
+
+    # USA Real Sports Channels
+    r'^USA Real NBA \d+:',      # USA Real NBA
+    r'^USA Real NHL \d+:',      # USA Real NHL
+    r'^USA Real MLB \d+:',      # USA Real MLB
+    r'^USA \| MLS \d+',         # USA | MLS
+    r'^USA Soccer\d+:',         # USA Soccer
+
+    # Junior Hockey Leagues
+    r'^WHL \d+:',               # Western Hockey League
+    r'^QMJHL \d+:',             # Quebec Major Junior Hockey League
+    r'^OHL \d+:',               # Ontario Hockey League
+
+    # International Soccer/Football
+    r'^FA Cup \d+',             # FA Cup
+    r'^EFL\d+',                 # EFL (no space)
+    r'^Scottish Premiership \d+:', # Scottish Premiership
+    r'^SPFL \d+:',              # Scottish Professional Football League
+    r'^Super League \+ \d+',    # Super League
+    r'^UEFA/FIFA \d+',          # UEFA/FIFA events
+    r'^UEFA Europa Conf\. League \d+:', # UEFA Europa Conference League
+    r'^GAAGO : GAME \d+',       # GAAGO
+    r'^LOI GAME \d+',           # League of Ireland
+    r'^National League TV \d+', # National League TV
+
+    # Streaming Platforms (International)
+    r'^Sky Sports\+ \|',        # Sky Sports+
+    r'^Sky Tennis\+ \|',        # Sky Tennis+
+    r'^Viaplay NO \d+',         # Viaplay Norway (no colon)
+    r'^TV2 NO \d+:',            # TV2 Norway
+    r'^Tv4 Play SE \d+:',       # TV4 Play Sweden
+    r'^Setanta Sports \d+:',    # Setanta Sports
+
+    # Other Sports Events
+    r'^Dirtvision : EVENT \d+', # Dirtvision
+    r'^TrillerTV Event \d+',    # TrillerTV
+    r'^Tennis TV \| Event \d+', # Tennis TV
+    r'^Clubber \d+',            # Clubber
+    r'^Matchroom Event \d+',    # Matchroom
+    r'^FIBA \d+:',              # FIBA Basketball
 
     # US Networks and Streaming Platforms
     r'^US:',                     # US: prefix (no space)
@@ -107,35 +160,95 @@ def is_live_event_channel(channel_name):
     """
     # Define patterns specific to Live Event channels (numbered streams)
     live_event_patterns = [
+        # Major Sports Leagues
         r'^BIG10\+\s+\d+',
         r'^Bundesliga\s+\d+',
+        r'^EPL\s*\d+',              # EPL with optional space
+        r'^La Liga\s+\d+',
+        r'^Ligue1\s+\d+',
+        r'^Serie A\s+\d+',
+
+        # Basketball
+        r'^NBA\s+\d+',
+        r'^NCAAB\s+\d+',            # NCAA Basketball
+        r'^NCAAW B\s+\d+',          # NCAA Women's Basketball
+        r'^NJCAA Men\'s Basketball\s+\d+',
+        r'^NJCAA Women\'s Basketball\s+\d+',
+        r'^USA Real NBA\s+\d+',
+        r'^WNBA\s+\d+',
+        r'^FIBA\s+\d+',
+
+        # Football
+        r'^NCAAF\s+\d+',
+        r'^NFL\s+\d+',
+        r'^NFL\s+Game Pass\s+\d+',
+        r'^NFL\s+Multi Screen\s+/\s+HDR\s+\d+',
+        r'^NFL\s+\|\s+\d+',
+
+        # Hockey
+        r'^NHL\s+(\||:)\s*\d+',
+        r'^USA Real NHL\s+\d+',
+        r'^WHL\s+\d+',              # Western Hockey League
+        r'^QMJHL\s+\d+',            # Quebec Major Junior Hockey League
+        r'^OHL\s+\d+',              # Ontario Hockey League
+
+        # Baseball
+        r'^MLB\s+\d+',
+        r'^Mi?LB\s+\d+',            # Matches both MiLB and MILB
+        r'^USA Real MLB\s+\d+',
+
+        # Soccer/Football
+        r'^MLS\s+(NEXT PRO\s+)?\d+',
+        r'^MLS\s+Espanolⓧ\s+\d+',
+        r'^USA\s+\|\s+MLS\s+\d+',
+        r'^USA Soccer\d+',
+        r'^FA Cup\s+\d+',
+        r'^EFL\d+',
+        r'^Scottish Premiership\s+\d+',
+        r'^SPFL\s+\d+',
+        r'^Super League\s+\+\s+\d+',
+        r'^UEFA\s+(Champions|Europa)\s+League\s+\d+',
+        r'^UEFA\s+Europa\s+Conf\.\s+League\s+\d+',
+        r'^UEFA/FIFA\s+\d+',
+        r'^GAAGO\s+:\s+GAME\s+\d+',
+        r'^LOI\s+GAME\s+\d+',
+        r'^National League TV\s+\d+',
+
+        # Streaming Services
         r'^DAZN\s+[A-Z]{2}\s+\d+',
-        r'^EPL\s+\d+',
         r'^ESPN\+\s+\d+',
         r'^Fanatiz\s+\d+',
         r'^Flo\s+(Football|Racing|Sports)\s+\d+',
-        r'^La Liga\s+\d+',
-        r'^Ligue1\s+\d+',
-        r'^LIVE EVENT\s+\d+',
-        r'^MAX\s+[A-Z]{2}\s+\d+',
-        r'^MLB\s+\d+',
-        r'^MLS\s+(NEXT PRO\s+)?\d+',
-        r'^Mi?LB\s+\d+',  # Matches both MiLB and MILB
-        r'^NBA\s+\d+',
-        r'^NCAAF\s+\d+',
-        r'^NFL\s+\d+',
-        r'^NHL\s+(\||:)\s*\d+',
         r'^Paramount\+\s+\d+',
         r'^Peacock\s+\d+',
         r'^Prime US\s+\d+',
-        r'^Serie A\s+\d+',
+        r'^SEC\+\s+/\s+ACC extra\s+\d+',
+        r'^Fubo Sports Network\s+\d+',
         r'^Sportsnet\+\s+\d+',
-        r'^Tennis\s+\d+',
         r'^TSN\+\s+\d+',
-        r'^UEFA\s+(Champions|Europa)\s+League\s+\d+',
-        r'^UFC\s+\d+',
+
+        # International Streaming
+        r'^MAX\s+[A-Z]{2}\s+\d+',
         r'^Viaplay\s+[A-Z]{2}\s+\d+',
-        r'^WNBA\s+\d+',
+        r'^Viaplay\s+NO\s+\d+',     # Viaplay Norway (no colon)
+        r'^TV2\s+NO\s+\d+',
+        r'^Tv4\s+Play\s+SE\s+\d+',
+        r'^Sky\s+Sports\+\s+\|',
+        r'^Sky\s+Tennis\+\s+\|',
+        r'^Setanta\s+Sports\s+\d+',
+
+        # Tennis and Combat Sports
+        r'^Tennis\s+\d+',
+        r'^Tennis\s+TV\s+\|\s+Event\s+\d+',
+        r'^UFC\s+\d+',
+        r'^TrillerTV\s+Event\s+\d+',
+        r'^Matchroom\s+Event\s+\d+',
+
+        # Other Sports
+        r'^LIVE EVENT\s+\d+',
+        r'^Dirtvision\s+:\s+EVENT\s+\d+',
+        r'^Clubber\s+\d+',
+        r'^NCAA\s+Softball\s+\d+',
     ]
 
     for pattern in live_event_patterns:
