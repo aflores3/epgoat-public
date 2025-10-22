@@ -43,6 +43,36 @@ KNOWN_FAMILIES = [
     r'^UEFA Europa League \d+:',
     r'^Viaplay NL \d+:',
     r'^Viaplay SE \d+:',
+
+    # Streaming Services - Sports Events
+    r'^Prime US \d+:',           # Prime Video sports events
+    r'^Paramount\+ \d+ :',       # Paramount+ numbered channels (with space before colon)
+    r'^Amazon US:',              # Amazon streaming channels
+
+    # Sports Leagues (additional variations)
+    r'^MiLB \d+:',              # Minor League Baseball (uppercase i)
+    r'^MILB \d+:',              # Minor League Baseball (uppercase I)
+    r'^MLS NEXT PRO \d+',       # MLS development league
+    r'^MLS \d+ \|',             # MLS with pipe separator
+    r'^NCAAF \d+ :',            # NCAAF with space before colon
+    r'^WNBA \d+:',              # WNBA channels
+    r'^NFL',                     # NFL channels (various formats)
+    r'^NHL:',                    # NHL with colon (not pipe)
+    r'^UFC',                     # UFC channels
+
+    # US Networks and Streaming Platforms
+    r'^US:',                     # US: prefix (no space)
+    r'^US :',                    # US : prefix (with space)
+    r'^\[Xumo\]',               # Xumo streaming platform
+    r'^\[Stirr\]',              # Stirr streaming platform
+    r'^\[Tubi\]',               # Tubi streaming platform
+
+    # Cable/Satellite Providers
+    r'^Spectrum',                # Spectrum channels
+    r'^SPECTRUM',                # SPECTRUM (uppercase)
+
+    # Regional/Local TV Stations
+    r'^[A-Z]{2} \|',            # State code | City | Network format
 ]
 
 def extract_channel_name(line):
