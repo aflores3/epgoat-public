@@ -201,6 +201,48 @@ def match_prefix_and_shell(name: str, verbose: bool = False) -> tuple[bool, str 
     return False, None, None
 
 # ----------------------------
+# Pattern validation
+# ----------------------------
+def validate_patterns(verbose: bool = False) -> bool:
+    """
+    Validate channel patterns on startup.
+    Checks for common issues and provides warnings.
+
+    Returns True if all patterns are valid, False if issues found.
+    """
+    issues = []
+
+    for pattern, name in ALLOWED_CHANNEL_PATTERNS:
+        # Check if pattern compiles
+        try:
+            re.compile(pattern)
+        except re.error as e:
+            issues.append(f"Pattern '{name}' failed to compile: {e}")
+            continue
+
+        # Check for potentially problematic patterns
+        if pattern.count('(') != pattern.count(')'):
+            issues.append(f"Pattern '{name}' has mismatched parentheses")
+
+        # Check for overly broad patterns
+        if pattern in (r'^[A-Z]+', r'^\w+', r'^.+'):
+            issues.append(f"Pattern '{name}' is too broad and may match unintended channels")
+
+    if issues:
+        print("="*70, file=sys.stderr)
+        print("PATTERN VALIDATION WARNINGS:", file=sys.stderr)
+        print("="*70, file=sys.stderr)
+        for issue in issues:
+            print(f"  ⚠️  {issue}", file=sys.stderr)
+        print("="*70, file=sys.stderr)
+        return False
+
+    if verbose:
+        print(f"[info] Validated {len(ALLOWED_CHANNEL_PATTERNS)} channel patterns - all OK", file=sys.stderr)
+
+    return True
+
+# ----------------------------
 # Fluff/Ignore payload tokens (treated as GENERIC if they're all you see)
 # These are technical terms that don't indicate actual event content
 # ----------------------------
@@ -665,6 +707,9 @@ def main():
     ap.add_argument("--max-event-duration-min", type=int, default=360, help="Maximum event duration (minutes)")
     ap.add_argument("--verbose", "-v", action="store_true", help="Enable verbose debug logging")
     args = ap.parse_args()
+
+    # Validate channel patterns on startup
+    validate_patterns(verbose=args.verbose)
 
     # Validate Python version and timezone support
     if ZoneInfo is None:
