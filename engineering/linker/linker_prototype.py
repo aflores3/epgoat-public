@@ -49,109 +49,122 @@ except Exception:
 # ----------------------------
 # Allowed channel patterns (pattern-based matching for numbered channels)
 # These patterns match specific numbered channel families instead of just prefixes
+#
+# Pattern Syntax Guide:
+#   \s+ = one or more spaces (required)
+#   \s* = zero or more spaces (optional)
+#   \d+ = one or more digits (flexible count: 1, 01, 100, etc.)
+#   :? = optional colon
+#   \s*: = optional space before required colon
+#   \s*:? = optional space before optional colon
+#
+# Example matches:
+#   r'^NCAAF\s+\d+\s*:?' matches: "NCAAF 1:", "NCAAF 01 :", "NCAAF 100:"
+#
+# Note: Patterns are case-insensitive (IGNORECASE flag is set)
 # ----------------------------
 ALLOWED_CHANNEL_PATTERNS = [
     # Major Sports Leagues
-    (r'^BIG10\+ \d{2}:', 'BIG10+'),
-    (r'^Bundesliga \d{2}:', 'Bundesliga'),
-    (r'^EPL \d{2}:?', 'EPL'),  # Colon optional
-    (r'^EPL\d{2}', 'EPL'),  # No space variant
-    (r'^La Liga \d{2}:', 'La Liga'),
-    (r'^Ligue1 \d{2}:', 'Ligue1'),
-    (r'^Serie A \d{2}:', 'Serie A'),
-    (r'^Scottish Premiership \d{2}:', 'Scottish Premiership'),
-    (r'^SPFL \d{2}:', 'SPFL'),
+    # European football (soccer) leagues with numbered event channels
+    (r'^BIG10\+\s+\d+\s*:', 'BIG10+'),  # "BIG10+ 01: Game"
+    (r'^Bundesliga\s+\d+\s*:', 'Bundesliga'),  # "Bundesliga 01: Bayern vs Dortmund"
+    (r'^EPL\s*\d+\s*:?', 'EPL'),  # "EPL 01:" or "EPL01" (English Premier League)
+    (r'^La Liga\s+\d+\s*:', 'La Liga'),  # "La Liga 01: Real Madrid vs Barcelona"
+    (r'^Ligue1\s+\d+\s*:', 'Ligue1'),  # "Ligue1 01: PSG vs Marseille"
+    (r'^Serie A\s+\d+\s*:', 'Serie A'),  # "Serie A 01: Juventus vs Inter"
+    (r'^Scottish Premiership\s+\d+\s*:', 'Scottish Premiership'),  # "Scottish Premiership 01:"
+    (r'^SPFL\s+\d+\s*:', 'SPFL'),  # "SPFL 01:" (Scottish Professional Football League)
 
     # Basketball Leagues
-    (r'^NBA \d{2}:', 'NBA'),
-    (r'^NCAAB \d{2}:', 'NCAAB'),
-    (r'^NCAAW B \d{2}:', 'NCAAW B'),
-    (r'^NJCAA Men\'s Basketball \d{2}:', 'NJCAA Men\'s Basketball'),
-    (r'^NJCAA Women\'s Basketball \d{2}:', 'NJCAA Women\'s Basketball'),
-    (r'^USA Real NBA \d{2}:', 'USA Real NBA'),
-    (r'^WNBA \d{2}:?', 'WNBA'),  # Colon optional
-    (r'^FIBA \d{2}:', 'FIBA'),
+    (r'^NBA\s+\d+\s*:', 'NBA'),  # "NBA 01: Lakers vs Celtics @ 8pm ET"
+    (r'^NCAAB\s+\d+\s*:', 'NCAAB'),  # "NCAAB 01: Duke vs UNC"
+    (r'^NCAAW B\s+\d+\s*:', 'NCAAW B'),  # "NCAAW B 01: Women's game"
+    (r'^NJCAA Men\'s Basketball\s+\d+\s*:', 'NJCAA Men\'s Basketball'),  # "NJCAA Men's Basketball 01:"
+    (r'^NJCAA Women\'s Basketball\s+\d+\s*:', 'NJCAA Women\'s Basketball'),  # "NJCAA Women's Basketball 01:"
+    (r'^USA Real NBA\s+\d+\s*:', 'USA Real NBA'),  # "USA Real NBA 01: Game"
+    (r'^WNBA\s+\d+\s*:?', 'WNBA'),  # "WNBA 01: Storm vs Liberty" (colon optional)
+    (r'^FIBA\s+\d+\s*:', 'FIBA'),  # "FIBA 01: International game"
 
     # Football (American)
-    (r'^NCAAF \d{2,3}:?', 'NCAAF'),  # Colon optional (no space before colon due to normalization)
-    (r'^NFL \d{2}:?', 'NFL'),  # Colon optional
-    (r'^NFL Game Pass \d+', 'NFL Game Pass'),
-    (r'^NFL Multi Screen / HDR \d+', 'NFL Multi Screen'),
-    (r'^NFL\s+\|\s+\d{2}', 'NFL |'),
+    (r'^NCAAF\s+\d+\s*:?', 'NCAAF'),  # "NCAAF 01: Middle Tennessee at Delaware @ 07:30 PM ET"
+    (r'^NFL\s+\d+\s*:?', 'NFL'),  # "NFL 01: Patriots vs Chiefs @ 8:15 PM ET"
+    (r'^NFL Game Pass\s+\d+', 'NFL Game Pass'),  # "NFL Game Pass 1: Condensed game"
+    (r'^NFL Multi Screen / HDR\s+\d+', 'NFL Multi Screen'),  # "NFL Multi Screen / HDR 1: Multi-cam view"
+    (r'^NFL\s+\|\s+\d+', 'NFL |'),  # "NFL | 01: Game with pipe separator"
 
     # Hockey Leagues
-    (r'^NHL \d{2}:', 'NHL'),
-    (r'^NHL \| \d{2}:', 'NHL |'),
-    (r'^USA Real NHL \d{2}:', 'USA Real NHL'),
-    (r'^WHL \d{2}:', 'WHL'),
-    (r'^QMJHL \d{2}:', 'QMJHL'),
-    (r'^OHL \d{2}:', 'OHL'),
+    (r'^NHL\s+\d+\s*:', 'NHL'),  # "NHL 01: Rangers vs Bruins @ 7pm ET"
+    (r'^NHL\s+\|\s+\d+\s*:', 'NHL |'),  # "NHL | 01: Game with pipe separator"
+    (r'^USA Real NHL\s+\d+\s*:', 'USA Real NHL'),  # "USA Real NHL 01: Live game"
+    (r'^WHL\s+\d+\s*:', 'WHL'),  # "WHL 01: Western Hockey League game"
+    (r'^QMJHL\s+\d+\s*:', 'QMJHL'),  # "QMJHL 01: Quebec Major Junior Hockey League"
+    (r'^OHL\s+\d+\s*:', 'OHL'),  # "OHL 01: Ontario Hockey League game"
 
     # Baseball Leagues
-    (r'^MLB \d{2}:', 'MLB'),
-    (r'^MiLB \d{2}:', 'MiLB'),
-    (r'^MILB \d{2}:', 'MILB'),
-    (r'^USA Real MLB \d{2}:', 'USA Real MLB'),
+    (r'^MLB\s+\d+\s*:', 'MLB'),  # "MLB 01: Yankees vs Red Sox @ 7:05 PM ET"
+    (r'^MiLB\s+\d+\s*:', 'MiLB'),  # "MiLB 01: Minor League Baseball game"
+    (r'^MILB\s+\d+\s*:', 'MILB'),  # "MILB 01: Minor League Baseball (alternate spelling)"
+    (r'^USA Real MLB\s+\d+\s*:', 'USA Real MLB'),  # "USA Real MLB 01: Live game"
 
     # Soccer/Football (International)
-    (r'^MLS \d{2}:?', 'MLS'),  # Colon optional (no space before colon due to normalization)
-    (r'^MLS \d{1,3} \|', 'MLS'),  # MLS with pipe separator
-    (r'^MLS NEXT PRO \d{2}', 'MLS NEXT PRO'),
-    (r'^MLS Espanolⓧ \d{2}', 'MLS Espanol'),
-    (r'^USA \| MLS \d{2}', 'USA | MLS'),
-    (r'^USA Soccer\d{2}:', 'USA Soccer'),
-    (r'^FA Cup \d{2}', 'FA Cup'),
-    (r'^EFL\d{2}', 'EFL'),
-    (r'^Super League \+ \d{2}', 'Super League'),
-    (r'^UEFA Champions League \d{2}:', 'UEFA Champions League'),
-    (r'^UEFA Europa League \d{2}:', 'UEFA Europa League'),
-    (r'^UEFA Europa Conf\. League \d{2}:', 'UEFA Europa Conf League'),
-    (r'^UEFA/FIFA \d{2}', 'UEFA/FIFA'),
-    (r'^GAAGO:GAME \d{2}', 'GAAGO'),  # No spaces around colon due to normalization
-    (r'^LOI GAME \d{2}', 'LOI'),
-    (r'^National League TV \d{2}', 'National League TV'),
+    (r'^MLS\s+\d+\s*:?', 'MLS'),  # "MLS 01: Seattle vs Portland @ 10pm ET"
+    (r'^MLS\s+\d+\s+\|', 'MLS'),  # "MLS 01 | Game with pipe separator"
+    (r'^MLS NEXT PRO\s+\d+', 'MLS NEXT PRO'),  # "MLS NEXT PRO 01: Development league game"
+    (r'^MLS Espanolⓧ\s+\d+', 'MLS Espanol'),  # "MLS Espanolⓧ 01: Spanish broadcast"
+    (r'^USA\s+\|\s+MLS\s+\d+', 'USA | MLS'),  # "USA | MLS 01: US feed"
+    (r'^USA Soccer\d+\s*:', 'USA Soccer'),  # "USA Soccer1: USMNT game"
+    (r'^FA Cup\s+\d+', 'FA Cup'),  # "FA Cup 01: England's football competition"
+    (r'^EFL\d+', 'EFL'),  # "EFL01: English Football League"
+    (r'^Super League\s+\+\s+\d+', 'Super League'),  # "Super League + 01: Rugby league"
+    (r'^UEFA Champions League\s+\d+\s*:', 'UEFA Champions League'),  # "UEFA Champions League 01: Barcelona vs Bayern"
+    (r'^UEFA Europa League\s+\d+\s*:', 'UEFA Europa League'),  # "UEFA Europa League 01: Europa competition"
+    (r'^UEFA Europa Conf\. League\s+\d+\s*:', 'UEFA Europa Conf League'),  # "UEFA Europa Conf. League 01:"
+    (r'^UEFA/FIFA\s+\d+', 'UEFA/FIFA'),  # "UEFA/FIFA 01: International competition"
+    (r'^GAAGO\s*:\s*GAME\s+\d+', 'GAAGO'),  # "GAAGO : GAME 01" or "GAAGO:GAME 01" (Irish GAA football)
+    (r'^LOI GAME\s+\d+', 'LOI'),  # "LOI GAME 01: League of Ireland"
+    (r'^National League TV\s+\d+', 'National League TV'),  # "National League TV 01: Non-league football"
 
     # Streaming Services
-    (r'^DAZN BE \d{2}:', 'DAZN BE'),
-    (r'^DAZN CA \d+:?', 'DAZN CA'),  # No leading zeros, colon optional
-    (r'^ESPN\+ \d+:?', 'ESPN+'),  # Colon optional
-    (r'^Fanatiz \d{2}:', 'Fanatiz'),
-    (r'^Flo Football \d{2}:', 'Flo Football'),
-    (r'^Flo Racing \d{2}:', 'Flo Racing'),
-    (r'^Flo Sports \d{2,4}:', 'Flo Sports'),
-    (r'^Paramount\+ \d{2,3}:?', 'Paramount+'),  # Colon optional (no space before colon)
-    (r'^Peacock \d{2}:', 'Peacock'),
-    (r'^Prime US \d{2}:', 'Prime US'),
-    (r'^SEC\+ / ACC extra \d{2}', 'SEC+/ACC extra'),
-    (r'^Fubo Sports Network \d{2}', 'Fubo Sports Network'),
-    (r'^Sportsnet\+ \d{2}:?', 'Sportsnet+'),  # Colon optional
-    (r'^TSN\+ \d{2}:', 'TSN+'),
+    (r'^DAZN BE\s+\d+\s*:', 'DAZN BE'),  # "DAZN BE 01: Belgium sports streaming"
+    (r'^DAZN CA\s+\d+\s*:?', 'DAZN CA'),  # "DAZN CA 01: Canada sports streaming" (colon optional)
+    (r'^ESPN\+\s+\d+\s*:?', 'ESPN+'),  # "ESPN+ 01: College game" (colon optional)
+    (r'^Fanatiz\s+\d+\s*:', 'Fanatiz'),  # "Fanatiz 01: Latin American sports"
+    (r'^Flo Football\s+\d+\s*:', 'Flo Football'),  # "Flo Football 01: American football coverage"
+    (r'^Flo Racing\s+\d+\s*:', 'Flo Racing'),  # "Flo Racing 01: Motorsports event"
+    (r'^Flo Sports\s+\d+\s*:', 'Flo Sports'),  # "Flo Sports 01: Various sports"
+    (r'^Paramount\+\s+\d+\s*:?', 'Paramount+'),  # "Paramount+ 01: UEFA Champions League" (colon optional)
+    (r'^Peacock\s+\d+\s*:', 'Peacock'),  # "Peacock 01: Premier League game"
+    (r'^Prime US\s+\d+\s*:', 'Prime US'),  # "Prime US 01: Thursday Night Football"
+    (r'^SEC\+\s+/\s+ACC extra\s+\d+', 'SEC+/ACC extra'),  # "SEC+ / ACC extra 01: College sports"
+    (r'^Fubo Sports Network\s+\d+', 'Fubo Sports Network'),  # "Fubo Sports Network 01:"
+    (r'^Sportsnet\+\s+\d+\s*:?', 'Sportsnet+'),  # "Sportsnet+ 01: Canadian sports" (colon optional)
+    (r'^TSN\+\s+\d+\s*:', 'TSN+'),  # "TSN+ 01: The Sports Network Plus (Canada)"
 
     # International Streaming
-    (r'^MAX NL \d{2,3}:', 'MAX NL'),
-    (r'^MAX SE \d{2,3}:', 'MAX SE'),
-    (r'^MAX USA \d{2}:', 'MAX USA'),
-    (r'^Viaplay NL \d{2}:', 'Viaplay NL'),
-    (r'^Viaplay SE \d{2}:', 'Viaplay SE'),
-    (r'^Viaplay NO \d+', 'Viaplay NO'),  # No colon
-    (r'^TV2 NO \d{2}:', 'TV2 NO'),
-    (r'^Tv4 Play SE \d{2}:', 'Tv4 Play SE'),
-    (r'^Sky Sports\+ \|', 'Sky Sports+'),
-    (r'^Sky Tennis\+ \|', 'Sky Tennis+'),
-    (r'^Setanta Sports \d{2}:', 'Setanta Sports'),
+    (r'^MAX NL\s+\d+\s*:', 'MAX NL'),  # "MAX NL 01: Netherlands sports"
+    (r'^MAX SE\s+\d+\s*:', 'MAX SE'),  # "MAX SE 01: Sweden sports"
+    (r'^MAX USA\s+\d+\s*:', 'MAX USA'),  # "MAX USA 01: US sports"
+    (r'^Viaplay NL\s+\d+\s*:', 'Viaplay NL'),  # "Viaplay NL 01: Netherlands streaming"
+    (r'^Viaplay SE\s+\d+\s*:', 'Viaplay SE'),  # "Viaplay SE 01: Sweden streaming"
+    (r'^Viaplay NO\s+\d+', 'Viaplay NO'),  # "Viaplay NO 01: Norway streaming" (no colon)
+    (r'^TV2 NO\s+\d+\s*:', 'TV2 NO'),  # "TV2 NO 01: Norway broadcaster"
+    (r'^Tv4 Play SE\s+\d+\s*:', 'Tv4 Play SE'),  # "Tv4 Play SE 01: Sweden TV4 streaming"
+    (r'^Sky Sports\+\s+\|', 'Sky Sports+'),  # "Sky Sports+ | Game"
+    (r'^Sky Tennis\+\s+\|', 'Sky Tennis+'),  # "Sky Tennis+ | Match"
+    (r'^Setanta Sports\s+\d+\s*:', 'Setanta Sports'),  # "Setanta Sports 01: International sports"
 
     # Tennis and Combat Sports
-    (r'^Tennis \d{2}:', 'Tennis'),
-    (r'^Tennis TV \| Event \d{2}', 'Tennis TV'),
-    (r'^UFC \d{2}', 'UFC'),
-    (r'^TrillerTV Event \d{2}', 'TrillerTV'),
-    (r'^Matchroom Event \d+', 'Matchroom'),
+    (r'^Tennis\s+\d+\s*:', 'Tennis'),  # "Tennis 01: ATP Tour match"
+    (r'^Tennis TV\s+\|\s+Event\s+\d+', 'Tennis TV'),  # "Tennis TV | Event 01: Live tennis"
+    (r'^UFC\s+\d+', 'UFC'),  # "UFC 01: Fight Night"
+    (r'^TrillerTV Event\s+\d+', 'TrillerTV'),  # "TrillerTV Event 01: Boxing/MMA"
+    (r'^Matchroom Event\s+\d+', 'Matchroom'),  # "Matchroom Event 01: Boxing promotion"
 
     # Other Sports
-    (r'^LIVE EVENT \d{2}', 'LIVE EVENT'),
-    (r'^Dirtvision:EVENT \d{2}', 'Dirtvision'),  # No spaces around colon due to normalization
-    (r'^Clubber \d{2}', 'Clubber'),
-    (r'^NCAA Softball \d{2}:', 'NCAA Softball')
+    (r'^LIVE EVENT\s+\d+', 'LIVE EVENT'),  # "LIVE EVENT 01: Generic live sports"
+    (r'^Dirtvision\s*:\s*EVENT\s+\d+', 'Dirtvision'),  # "Dirtvision : EVENT 01" (dirt track racing)
+    (r'^Clubber\s+\d+', 'Clubber'),  # "Clubber 01: Combat sports"
+    (r'^NCAA Softball\s+\d+\s*:', 'NCAA Softball')  # "NCAA Softball 01: College softball game"
 ]
 
 # ----------------------------
@@ -170,19 +183,77 @@ def build_channel_regex(pattern: str) -> re.Pattern:
 
 CHANNEL_PATTERNS = [(name, build_channel_regex(pattern)) for pattern, name in ALLOWED_CHANNEL_PATTERNS]
 
-def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None]:
+def match_prefix_and_shell(name: str, verbose: bool = False) -> tuple[bool, str | None, re.Match | None]:
     """
     Check if name matches an allowed channel pattern.
     Returns (matched, channel_family_name, regex_match_object)
+
+    Note: Patterns handle flexible spacing around colons (e.g., "NCAAF 01:" or "NCAAF 01 :")
+
+    Args:
+        name: Channel name to match
+        verbose: If True, print debug information about matching attempts
     """
     n = (name or "").strip()
-    # allow “  : ” or “ :” before the colon
-    n = re.sub(r"\s+:\s*", ":", n)
+
+    if verbose and not n:
+        print(f"[DEBUG] Empty channel name after strip", file=sys.stderr)
+        return False, None, None
+
+    # Colon normalization removed - patterns now handle flexible spacing
     for family_name, rx in CHANNEL_PATTERNS:
         m = rx.match(n)
         if m:
+            if verbose:
+                print(f"[DEBUG] Matched '{n}' → Family: {family_name}", file=sys.stderr)
             return True, family_name, m
+
+    if verbose:
+        print(f"[DEBUG] No pattern matched for: '{n}'", file=sys.stderr)
+
     return False, None, None
+
+# ----------------------------
+# Pattern validation
+# ----------------------------
+def validate_patterns(verbose: bool = False) -> bool:
+    """
+    Validate channel patterns on startup.
+    Checks for common issues and provides warnings.
+
+    Returns True if all patterns are valid, False if issues found.
+    """
+    issues = []
+
+    for pattern, name in ALLOWED_CHANNEL_PATTERNS:
+        # Check if pattern compiles
+        try:
+            re.compile(pattern)
+        except re.error as e:
+            issues.append(f"Pattern '{name}' failed to compile: {e}")
+            continue
+
+        # Check for potentially problematic patterns
+        if pattern.count('(') != pattern.count(')'):
+            issues.append(f"Pattern '{name}' has mismatched parentheses")
+
+        # Check for overly broad patterns
+        if pattern in (r'^[A-Z]+', r'^\w+', r'^.+'):
+            issues.append(f"Pattern '{name}' is too broad and may match unintended channels")
+
+    if issues:
+        print("="*70, file=sys.stderr)
+        print("PATTERN VALIDATION WARNINGS:", file=sys.stderr)
+        print("="*70, file=sys.stderr)
+        for issue in issues:
+            print(f"  ⚠️  {issue}", file=sys.stderr)
+        print("="*70, file=sys.stderr)
+        return False
+
+    if verbose:
+        print(f"[info] Validated {len(ALLOWED_CHANNEL_PATTERNS)} channel patterns - all OK", file=sys.stderr)
+
+    return True
 
 # ----------------------------
 # Fluff/Ignore payload tokens (treated as GENERIC if they're all you see)
@@ -647,7 +718,11 @@ def main():
     ap.add_argument("--date", help="Target date YYYY-MM-DD (default: today in tz)")
     ap.add_argument("--event-duration-min", type=int, default=180, help="Event duration when time is known (minutes)")
     ap.add_argument("--max-event-duration-min", type=int, default=360, help="Maximum event duration (minutes)")
+    ap.add_argument("--verbose", "-v", action="store_true", help="Enable verbose debug logging")
     args = ap.parse_args()
+
+    # Validate channel patterns on startup
+    validate_patterns(verbose=args.verbose)
 
     # Validate Python version and timezone support
     if ZoneInfo is None:
@@ -696,7 +771,7 @@ def main():
 
     for e in entries:
         disp = (e.tvg_name or e.display_name or "").strip()
-        ok, family_name, match_obj = match_prefix_and_shell(disp)
+        ok, family_name, match_obj = match_prefix_and_shell(disp, verbose=args.verbose)
         if ok:
             processed.append(e)
             match_data.append((family_name, match_obj))
