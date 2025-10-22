@@ -55,10 +55,11 @@ KNOWN_FAMILIES = [
     r'^MLS NEXT PRO \d+',       # MLS development league
     r'^MLS \d+ \|',             # MLS with pipe separator
     r'^NCAAF \d+ :',            # NCAAF with space before colon
-    r'^WNBA \d+:',              # WNBA channels
-    r'^NFL',                     # NFL channels (various formats)
-    r'^NHL:',                    # NHL with colon (not pipe)
-    r'^UFC',                     # UFC channels
+    r'^WNBA \d+:?',             # WNBA channels (colon optional)
+    r'^NFL \d+',                # NFL numbered event channels
+    r'^NHL: [A-Z]',             # NHL team-specific channels
+    r'^UFC \d+',                # UFC numbered event channels
+    r'^LIVE EVENT \d+',         # Generic live event channels
 
     # US Networks and Streaming Platforms
     r'^US:',                     # US: prefix (no space)
@@ -98,6 +99,50 @@ def is_vod_url(url):
     url_lower = url.lower()
     return '/movie/' in url_lower or '/series/' in url_lower
 
+def is_live_event_channel(channel_name):
+    """
+    Check if channel is a Live Event channel (numbered stream).
+    Live Event channels are specifically patterns that match known
+    sports/event streaming services with numbered channels.
+    """
+    # Define patterns specific to Live Event channels (numbered streams)
+    live_event_patterns = [
+        r'^BIG10\+\s+\d+',
+        r'^Bundesliga\s+\d+',
+        r'^DAZN\s+[A-Z]{2}\s+\d+',
+        r'^EPL\s+\d+',
+        r'^ESPN\+\s+\d+',
+        r'^Fanatiz\s+\d+',
+        r'^Flo\s+(Football|Racing|Sports)\s+\d+',
+        r'^La Liga\s+\d+',
+        r'^Ligue1\s+\d+',
+        r'^LIVE EVENT\s+\d+',
+        r'^MAX\s+[A-Z]{2}\s+\d+',
+        r'^MLB\s+\d+',
+        r'^MLS\s+(NEXT PRO\s+)?\d+',
+        r'^Mi?LB\s+\d+',  # Matches both MiLB and MILB
+        r'^NBA\s+\d+',
+        r'^NCAAF\s+\d+',
+        r'^NFL\s+\d+',
+        r'^NHL\s+(\||:)\s*\d+',
+        r'^Paramount\+\s+\d+',
+        r'^Peacock\s+\d+',
+        r'^Prime US\s+\d+',
+        r'^Serie A\s+\d+',
+        r'^Sportsnet\+\s+\d+',
+        r'^Tennis\s+\d+',
+        r'^TSN\+\s+\d+',
+        r'^UEFA\s+(Champions|Europa)\s+League\s+\d+',
+        r'^UFC\s+\d+',
+        r'^Viaplay\s+[A-Z]{2}\s+\d+',
+        r'^WNBA\s+\d+',
+    ]
+
+    for pattern in live_event_patterns:
+        if re.match(pattern, channel_name):
+            return True
+    return False
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python verify_channels.py <path_to_m3u_file>")
@@ -111,6 +156,14 @@ def main():
     matched_channels = 0
     unmatched_channels = []
     family_counts = defaultdict(int)
+
+    # Track Live Event channels separately
+    live_event_total = 0
+    live_event_matched = 0
+    live_event_unmatched = []
+    regular_tv_total = 0
+    regular_tv_matched = 0
+    regular_tv_unmatched = []
 
     print("Analyzing M3U file...\n")
 
@@ -147,10 +200,28 @@ def main():
                 family = extract_family_prefix(channel_name)
                 family_counts[family] += 1
 
-                if matches_known_pattern(channel_name):
+                # Check if this is a Live Event channel
+                is_live_event = is_live_event_channel(channel_name)
+                is_matched = matches_known_pattern(channel_name)
+
+                if is_matched:
                     matched_channels += 1
                 else:
                     unmatched_channels.append(channel_name)
+
+                # Categorize as Live Event or Regular TV
+                if is_live_event:
+                    live_event_total += 1
+                    if is_matched:
+                        live_event_matched += 1
+                    else:
+                        live_event_unmatched.append(channel_name)
+                else:
+                    regular_tv_total += 1
+                    if is_matched:
+                        regular_tv_matched += 1
+                    else:
+                        regular_tv_unmatched.append(channel_name)
 
             i = j + 1
         else:
@@ -165,10 +236,26 @@ def main():
     print(f"  - VOD (movies/series): {vod_channels}")
     print(f"  - Live TV channels: {live_tv_channels}")
     print(f"")
+
     if live_tv_channels > 0:
-        print(f"Live TV Analysis:")
+        print(f"Overall Live TV Analysis:")
         print(f"  Matched by known patterns: {matched_channels} ({matched_channels/live_tv_channels*100:.1f}%)")
         print(f"  Unmatched channels: {len(unmatched_channels)} ({len(unmatched_channels)/live_tv_channels*100:.1f}%)")
+        print(f"")
+
+        print(f"Breakdown by Channel Type:")
+        print(f"")
+        print(f"  Live Event Channels (numbered streams):")
+        print(f"    Total: {live_event_total}")
+        if live_event_total > 0:
+            print(f"    Matched: {live_event_matched} ({live_event_matched/live_event_total*100:.1f}%)")
+            print(f"    Unmatched: {len(live_event_unmatched)} ({len(live_event_unmatched)/live_event_total*100:.1f}%)")
+        print(f"")
+        print(f"  Regular TV Channels (standard channels):")
+        print(f"    Total: {regular_tv_total}")
+        if regular_tv_total > 0:
+            print(f"    Matched: {regular_tv_matched} ({regular_tv_matched/regular_tv_total*100:.1f}%)")
+            print(f"    Unmatched: {len(regular_tv_unmatched)} ({len(regular_tv_unmatched)/regular_tv_total*100:.1f}%)")
     print()
 
     print(f"{'='*80}")
