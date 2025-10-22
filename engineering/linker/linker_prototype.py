@@ -49,109 +49,122 @@ except Exception:
 # ----------------------------
 # Allowed channel patterns (pattern-based matching for numbered channels)
 # These patterns match specific numbered channel families instead of just prefixes
+#
+# Pattern Syntax Guide:
+#   \s+ = one or more spaces (required)
+#   \s* = zero or more spaces (optional)
+#   \d+ = one or more digits (flexible count: 1, 01, 100, etc.)
+#   :? = optional colon
+#   \s*: = optional space before required colon
+#   \s*:? = optional space before optional colon
+#
+# Example matches:
+#   r'^NCAAF\s+\d+\s*:?' matches: "NCAAF 1:", "NCAAF 01 :", "NCAAF 100:"
+#
+# Note: Patterns are case-insensitive (IGNORECASE flag is set)
 # ----------------------------
 ALLOWED_CHANNEL_PATTERNS = [
     # Major Sports Leagues
-    # Pattern format: \s* = optional spaces, \d+ = flexible digits, \s*:? = optional space before optional colon
-    (r'^BIG10\+\s+\d+\s*:', 'BIG10+'),
-    (r'^Bundesliga\s+\d+\s*:', 'Bundesliga'),
-    (r'^EPL\s*\d+\s*:?', 'EPL'),  # Handles "EPL 01:" or "EPL01"
-    (r'^La Liga\s+\d+\s*:', 'La Liga'),
-    (r'^Ligue1\s+\d+\s*:', 'Ligue1'),
-    (r'^Serie A\s+\d+\s*:', 'Serie A'),
-    (r'^Scottish Premiership\s+\d+\s*:', 'Scottish Premiership'),
-    (r'^SPFL\s+\d+\s*:', 'SPFL'),
+    # European football (soccer) leagues with numbered event channels
+    (r'^BIG10\+\s+\d+\s*:', 'BIG10+'),  # "BIG10+ 01: Game"
+    (r'^Bundesliga\s+\d+\s*:', 'Bundesliga'),  # "Bundesliga 01: Bayern vs Dortmund"
+    (r'^EPL\s*\d+\s*:?', 'EPL'),  # "EPL 01:" or "EPL01" (English Premier League)
+    (r'^La Liga\s+\d+\s*:', 'La Liga'),  # "La Liga 01: Real Madrid vs Barcelona"
+    (r'^Ligue1\s+\d+\s*:', 'Ligue1'),  # "Ligue1 01: PSG vs Marseille"
+    (r'^Serie A\s+\d+\s*:', 'Serie A'),  # "Serie A 01: Juventus vs Inter"
+    (r'^Scottish Premiership\s+\d+\s*:', 'Scottish Premiership'),  # "Scottish Premiership 01:"
+    (r'^SPFL\s+\d+\s*:', 'SPFL'),  # "SPFL 01:" (Scottish Professional Football League)
 
     # Basketball Leagues
-    (r'^NBA\s+\d+\s*:', 'NBA'),
-    (r'^NCAAB\s+\d+\s*:', 'NCAAB'),
-    (r'^NCAAW B\s+\d+\s*:', 'NCAAW B'),
-    (r'^NJCAA Men\'s Basketball\s+\d+\s*:', 'NJCAA Men\'s Basketball'),
-    (r'^NJCAA Women\'s Basketball\s+\d+\s*:', 'NJCAA Women\'s Basketball'),
-    (r'^USA Real NBA\s+\d+\s*:', 'USA Real NBA'),
-    (r'^WNBA\s+\d+\s*:?', 'WNBA'),  # Colon optional
-    (r'^FIBA\s+\d+\s*:', 'FIBA'),
+    (r'^NBA\s+\d+\s*:', 'NBA'),  # "NBA 01: Lakers vs Celtics @ 8pm ET"
+    (r'^NCAAB\s+\d+\s*:', 'NCAAB'),  # "NCAAB 01: Duke vs UNC"
+    (r'^NCAAW B\s+\d+\s*:', 'NCAAW B'),  # "NCAAW B 01: Women's game"
+    (r'^NJCAA Men\'s Basketball\s+\d+\s*:', 'NJCAA Men\'s Basketball'),  # "NJCAA Men's Basketball 01:"
+    (r'^NJCAA Women\'s Basketball\s+\d+\s*:', 'NJCAA Women\'s Basketball'),  # "NJCAA Women's Basketball 01:"
+    (r'^USA Real NBA\s+\d+\s*:', 'USA Real NBA'),  # "USA Real NBA 01: Game"
+    (r'^WNBA\s+\d+\s*:?', 'WNBA'),  # "WNBA 01: Storm vs Liberty" (colon optional)
+    (r'^FIBA\s+\d+\s*:', 'FIBA'),  # "FIBA 01: International game"
 
     # Football (American)
-    (r'^NCAAF\s+\d+\s*:?', 'NCAAF'),  # Handles "NCAAF 01 :" or "NCAAF 01:"
-    (r'^NFL\s+\d+\s*:?', 'NFL'),
-    (r'^NFL Game Pass\s+\d+', 'NFL Game Pass'),
-    (r'^NFL Multi Screen / HDR\s+\d+', 'NFL Multi Screen'),
-    (r'^NFL\s+\|\s+\d+', 'NFL |'),
+    (r'^NCAAF\s+\d+\s*:?', 'NCAAF'),  # "NCAAF 01: Middle Tennessee at Delaware @ 07:30 PM ET"
+    (r'^NFL\s+\d+\s*:?', 'NFL'),  # "NFL 01: Patriots vs Chiefs @ 8:15 PM ET"
+    (r'^NFL Game Pass\s+\d+', 'NFL Game Pass'),  # "NFL Game Pass 1: Condensed game"
+    (r'^NFL Multi Screen / HDR\s+\d+', 'NFL Multi Screen'),  # "NFL Multi Screen / HDR 1: Multi-cam view"
+    (r'^NFL\s+\|\s+\d+', 'NFL |'),  # "NFL | 01: Game with pipe separator"
 
     # Hockey Leagues
-    (r'^NHL\s+\d+\s*:', 'NHL'),
-    (r'^NHL\s+\|\s+\d+\s*:', 'NHL |'),
-    (r'^USA Real NHL\s+\d+\s*:', 'USA Real NHL'),
-    (r'^WHL\s+\d+\s*:', 'WHL'),
-    (r'^QMJHL\s+\d+\s*:', 'QMJHL'),
-    (r'^OHL\s+\d+\s*:', 'OHL'),
+    (r'^NHL\s+\d+\s*:', 'NHL'),  # "NHL 01: Rangers vs Bruins @ 7pm ET"
+    (r'^NHL\s+\|\s+\d+\s*:', 'NHL |'),  # "NHL | 01: Game with pipe separator"
+    (r'^USA Real NHL\s+\d+\s*:', 'USA Real NHL'),  # "USA Real NHL 01: Live game"
+    (r'^WHL\s+\d+\s*:', 'WHL'),  # "WHL 01: Western Hockey League game"
+    (r'^QMJHL\s+\d+\s*:', 'QMJHL'),  # "QMJHL 01: Quebec Major Junior Hockey League"
+    (r'^OHL\s+\d+\s*:', 'OHL'),  # "OHL 01: Ontario Hockey League game"
 
     # Baseball Leagues
-    (r'^MLB\s+\d+\s*:', 'MLB'),
-    (r'^MiLB\s+\d+\s*:', 'MiLB'),
-    (r'^MILB\s+\d+\s*:', 'MILB'),
-    (r'^USA Real MLB\s+\d+\s*:', 'USA Real MLB'),
+    (r'^MLB\s+\d+\s*:', 'MLB'),  # "MLB 01: Yankees vs Red Sox @ 7:05 PM ET"
+    (r'^MiLB\s+\d+\s*:', 'MiLB'),  # "MiLB 01: Minor League Baseball game"
+    (r'^MILB\s+\d+\s*:', 'MILB'),  # "MILB 01: Minor League Baseball (alternate spelling)"
+    (r'^USA Real MLB\s+\d+\s*:', 'USA Real MLB'),  # "USA Real MLB 01: Live game"
 
     # Soccer/Football (International)
-    (r'^MLS\s+\d+\s*:?', 'MLS'),  # Handles "MLS 01 :" or "MLS 01:"
-    (r'^MLS\s+\d+\s+\|', 'MLS'),  # MLS with pipe separator
-    (r'^MLS NEXT PRO\s+\d+', 'MLS NEXT PRO'),
-    (r'^MLS Espanolⓧ\s+\d+', 'MLS Espanol'),
-    (r'^USA\s+\|\s+MLS\s+\d+', 'USA | MLS'),
-    (r'^USA Soccer\d+\s*:', 'USA Soccer'),
-    (r'^FA Cup\s+\d+', 'FA Cup'),
-    (r'^EFL\d+', 'EFL'),
-    (r'^Super League\s+\+\s+\d+', 'Super League'),
-    (r'^UEFA Champions League\s+\d+\s*:', 'UEFA Champions League'),
-    (r'^UEFA Europa League\s+\d+\s*:', 'UEFA Europa League'),
-    (r'^UEFA Europa Conf\. League\s+\d+\s*:', 'UEFA Europa Conf League'),
-    (r'^UEFA/FIFA\s+\d+', 'UEFA/FIFA'),
-    (r'^GAAGO\s*:\s*GAME\s+\d+', 'GAAGO'),  # Handles "GAAGO : GAME 01" or "GAAGO:GAME 01"
-    (r'^LOI GAME\s+\d+', 'LOI'),
-    (r'^National League TV\s+\d+', 'National League TV'),
+    (r'^MLS\s+\d+\s*:?', 'MLS'),  # "MLS 01: Seattle vs Portland @ 10pm ET"
+    (r'^MLS\s+\d+\s+\|', 'MLS'),  # "MLS 01 | Game with pipe separator"
+    (r'^MLS NEXT PRO\s+\d+', 'MLS NEXT PRO'),  # "MLS NEXT PRO 01: Development league game"
+    (r'^MLS Espanolⓧ\s+\d+', 'MLS Espanol'),  # "MLS Espanolⓧ 01: Spanish broadcast"
+    (r'^USA\s+\|\s+MLS\s+\d+', 'USA | MLS'),  # "USA | MLS 01: US feed"
+    (r'^USA Soccer\d+\s*:', 'USA Soccer'),  # "USA Soccer1: USMNT game"
+    (r'^FA Cup\s+\d+', 'FA Cup'),  # "FA Cup 01: England's football competition"
+    (r'^EFL\d+', 'EFL'),  # "EFL01: English Football League"
+    (r'^Super League\s+\+\s+\d+', 'Super League'),  # "Super League + 01: Rugby league"
+    (r'^UEFA Champions League\s+\d+\s*:', 'UEFA Champions League'),  # "UEFA Champions League 01: Barcelona vs Bayern"
+    (r'^UEFA Europa League\s+\d+\s*:', 'UEFA Europa League'),  # "UEFA Europa League 01: Europa competition"
+    (r'^UEFA Europa Conf\. League\s+\d+\s*:', 'UEFA Europa Conf League'),  # "UEFA Europa Conf. League 01:"
+    (r'^UEFA/FIFA\s+\d+', 'UEFA/FIFA'),  # "UEFA/FIFA 01: International competition"
+    (r'^GAAGO\s*:\s*GAME\s+\d+', 'GAAGO'),  # "GAAGO : GAME 01" or "GAAGO:GAME 01" (Irish GAA football)
+    (r'^LOI GAME\s+\d+', 'LOI'),  # "LOI GAME 01: League of Ireland"
+    (r'^National League TV\s+\d+', 'National League TV'),  # "National League TV 01: Non-league football"
 
     # Streaming Services
-    (r'^DAZN BE\s+\d+\s*:', 'DAZN BE'),
-    (r'^DAZN CA\s+\d+\s*:?', 'DAZN CA'),  # Colon optional
-    (r'^ESPN\+\s+\d+\s*:?', 'ESPN+'),  # Colon optional
-    (r'^Fanatiz\s+\d+\s*:', 'Fanatiz'),
-    (r'^Flo Football\s+\d+\s*:', 'Flo Football'),
-    (r'^Flo Racing\s+\d+\s*:', 'Flo Racing'),
-    (r'^Flo Sports\s+\d+\s*:', 'Flo Sports'),
-    (r'^Paramount\+\s+\d+\s*:?', 'Paramount+'),  # Handles "Paramount+ 01:" or "Paramount+ 01 :"
-    (r'^Peacock\s+\d+\s*:', 'Peacock'),
-    (r'^Prime US\s+\d+\s*:', 'Prime US'),
-    (r'^SEC\+\s+/\s+ACC extra\s+\d+', 'SEC+/ACC extra'),
-    (r'^Fubo Sports Network\s+\d+', 'Fubo Sports Network'),
-    (r'^Sportsnet\+\s+\d+\s*:?', 'Sportsnet+'),
-    (r'^TSN\+\s+\d+\s*:', 'TSN+'),
+    (r'^DAZN BE\s+\d+\s*:', 'DAZN BE'),  # "DAZN BE 01: Belgium sports streaming"
+    (r'^DAZN CA\s+\d+\s*:?', 'DAZN CA'),  # "DAZN CA 01: Canada sports streaming" (colon optional)
+    (r'^ESPN\+\s+\d+\s*:?', 'ESPN+'),  # "ESPN+ 01: College game" (colon optional)
+    (r'^Fanatiz\s+\d+\s*:', 'Fanatiz'),  # "Fanatiz 01: Latin American sports"
+    (r'^Flo Football\s+\d+\s*:', 'Flo Football'),  # "Flo Football 01: American football coverage"
+    (r'^Flo Racing\s+\d+\s*:', 'Flo Racing'),  # "Flo Racing 01: Motorsports event"
+    (r'^Flo Sports\s+\d+\s*:', 'Flo Sports'),  # "Flo Sports 01: Various sports"
+    (r'^Paramount\+\s+\d+\s*:?', 'Paramount+'),  # "Paramount+ 01: UEFA Champions League" (colon optional)
+    (r'^Peacock\s+\d+\s*:', 'Peacock'),  # "Peacock 01: Premier League game"
+    (r'^Prime US\s+\d+\s*:', 'Prime US'),  # "Prime US 01: Thursday Night Football"
+    (r'^SEC\+\s+/\s+ACC extra\s+\d+', 'SEC+/ACC extra'),  # "SEC+ / ACC extra 01: College sports"
+    (r'^Fubo Sports Network\s+\d+', 'Fubo Sports Network'),  # "Fubo Sports Network 01:"
+    (r'^Sportsnet\+\s+\d+\s*:?', 'Sportsnet+'),  # "Sportsnet+ 01: Canadian sports" (colon optional)
+    (r'^TSN\+\s+\d+\s*:', 'TSN+'),  # "TSN+ 01: The Sports Network Plus (Canada)"
 
     # International Streaming
-    (r'^MAX NL\s+\d+\s*:', 'MAX NL'),
-    (r'^MAX SE\s+\d+\s*:', 'MAX SE'),
-    (r'^MAX USA\s+\d+\s*:', 'MAX USA'),
-    (r'^Viaplay NL\s+\d+\s*:', 'Viaplay NL'),
-    (r'^Viaplay SE\s+\d+\s*:', 'Viaplay SE'),
-    (r'^Viaplay NO\s+\d+', 'Viaplay NO'),  # No colon
-    (r'^TV2 NO\s+\d+\s*:', 'TV2 NO'),
-    (r'^Tv4 Play SE\s+\d+\s*:', 'Tv4 Play SE'),
-    (r'^Sky Sports\+\s+\|', 'Sky Sports+'),
-    (r'^Sky Tennis\+\s+\|', 'Sky Tennis+'),
-    (r'^Setanta Sports\s+\d+\s*:', 'Setanta Sports'),
+    (r'^MAX NL\s+\d+\s*:', 'MAX NL'),  # "MAX NL 01: Netherlands sports"
+    (r'^MAX SE\s+\d+\s*:', 'MAX SE'),  # "MAX SE 01: Sweden sports"
+    (r'^MAX USA\s+\d+\s*:', 'MAX USA'),  # "MAX USA 01: US sports"
+    (r'^Viaplay NL\s+\d+\s*:', 'Viaplay NL'),  # "Viaplay NL 01: Netherlands streaming"
+    (r'^Viaplay SE\s+\d+\s*:', 'Viaplay SE'),  # "Viaplay SE 01: Sweden streaming"
+    (r'^Viaplay NO\s+\d+', 'Viaplay NO'),  # "Viaplay NO 01: Norway streaming" (no colon)
+    (r'^TV2 NO\s+\d+\s*:', 'TV2 NO'),  # "TV2 NO 01: Norway broadcaster"
+    (r'^Tv4 Play SE\s+\d+\s*:', 'Tv4 Play SE'),  # "Tv4 Play SE 01: Sweden TV4 streaming"
+    (r'^Sky Sports\+\s+\|', 'Sky Sports+'),  # "Sky Sports+ | Game"
+    (r'^Sky Tennis\+\s+\|', 'Sky Tennis+'),  # "Sky Tennis+ | Match"
+    (r'^Setanta Sports\s+\d+\s*:', 'Setanta Sports'),  # "Setanta Sports 01: International sports"
 
     # Tennis and Combat Sports
-    (r'^Tennis\s+\d+\s*:', 'Tennis'),
-    (r'^Tennis TV\s+\|\s+Event\s+\d+', 'Tennis TV'),
-    (r'^UFC\s+\d+', 'UFC'),
-    (r'^TrillerTV Event\s+\d+', 'TrillerTV'),
-    (r'^Matchroom Event\s+\d+', 'Matchroom'),
+    (r'^Tennis\s+\d+\s*:', 'Tennis'),  # "Tennis 01: ATP Tour match"
+    (r'^Tennis TV\s+\|\s+Event\s+\d+', 'Tennis TV'),  # "Tennis TV | Event 01: Live tennis"
+    (r'^UFC\s+\d+', 'UFC'),  # "UFC 01: Fight Night"
+    (r'^TrillerTV Event\s+\d+', 'TrillerTV'),  # "TrillerTV Event 01: Boxing/MMA"
+    (r'^Matchroom Event\s+\d+', 'Matchroom'),  # "Matchroom Event 01: Boxing promotion"
 
     # Other Sports
-    (r'^LIVE EVENT\s+\d+', 'LIVE EVENT'),
-    (r'^Dirtvision\s*:\s*EVENT\s+\d+', 'Dirtvision'),  # Handles "Dirtvision : EVENT 01"
-    (r'^Clubber\s+\d+', 'Clubber'),
-    (r'^NCAA Softball\s+\d+\s*:', 'NCAA Softball')
+    (r'^LIVE EVENT\s+\d+', 'LIVE EVENT'),  # "LIVE EVENT 01: Generic live sports"
+    (r'^Dirtvision\s*:\s*EVENT\s+\d+', 'Dirtvision'),  # "Dirtvision : EVENT 01" (dirt track racing)
+    (r'^Clubber\s+\d+', 'Clubber'),  # "Clubber 01: Combat sports"
+    (r'^NCAA Softball\s+\d+\s*:', 'NCAA Softball')  # "NCAA Softball 01: College softball game"
 ]
 
 # ----------------------------
