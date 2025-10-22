@@ -73,7 +73,7 @@ ALLOWED_CHANNEL_PATTERNS = [
     (r'^FIBA \d{2}:', 'FIBA'),
 
     # Football (American)
-    (r'^NCAAF \d{2,3} :?', 'NCAAF'),  # Space before colon, colon optional
+    (r'^NCAAF \d{2,3}:?', 'NCAAF'),  # Colon optional (no space before colon due to normalization)
     (r'^NFL \d{2}:?', 'NFL'),  # Colon optional
     (r'^NFL Game Pass \d+', 'NFL Game Pass'),
     (r'^NFL Multi Screen / HDR \d+', 'NFL Multi Screen'),
@@ -94,7 +94,7 @@ ALLOWED_CHANNEL_PATTERNS = [
     (r'^USA Real MLB \d{2}:', 'USA Real MLB'),
 
     # Soccer/Football (International)
-    (r'^MLS \d{2} :?', 'MLS'),  # Colon optional
+    (r'^MLS \d{2}:?', 'MLS'),  # Colon optional (no space before colon due to normalization)
     (r'^MLS \d{1,3} \|', 'MLS'),  # MLS with pipe separator
     (r'^MLS NEXT PRO \d{2}', 'MLS NEXT PRO'),
     (r'^MLS Espanolⓧ \d{2}', 'MLS Espanol'),
