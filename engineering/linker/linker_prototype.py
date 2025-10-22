@@ -85,13 +85,13 @@ FLUFF_TOKENS = {
     "1080P","2160P","4K","HDR","SD","HD","H264","H265","AAC","AC3","EAC3",
 }
 
-# Words that *usually* indicate real content (treated as event if present),
-# but we will honor your explicit exception for Peacock:Studio below.
-CONTENT_HINTS = {"STUDIO","PREGAME","POSTGAME","SHOW","MATCH","GAME","VS","RACE","REPLAY","LIVEBLOG"}
+# Note: CONTENT_HINTS removed because classification already treats any non-fluff payload as "event".
+# If you later add more generic heuristics, consider reintroducing content hints to bias toward events.
 
 # Special-case overrides (prefix -> set of exact payloads considered GENERIC)
+# Per your latest instruction, Peacock: Studio should NOT be generic, so this is now empty.
 SPECIAL_GENERIC_EXCEPTIONS = {
-    "Peacock": {"STUDIO"},
+    # "Peacock": {"STUDIO"},
 }
 
 # ----------------------------
@@ -102,7 +102,7 @@ EVENT_TIME_RXES = [
     # "Oct 09 08:55 AM ET" or "Oct 9 8:55pm CT"  (month + day + time + AM/PM + TZ)
     re.compile(r"([A-Za-z]{3})\s+(\d{1,2})\s+(\d{1,2}):(\d{2})\s*(AM|PM)\s*([A-Za-z]{1,4})", re.IGNORECASE),
 
-    # NEW: "07:30 PM ET"  (time + AM/PM + TZ; no date)
+    # "07:30 PM ET"  (time + AM/PM + TZ; no date)
     re.compile(r"(\d{1,2}):(\d{2})\s*(AM|PM)\s*([A-Za-z]{1,4})", re.IGNORECASE),
 
     # "10/09 20:00 CET"  (MM/DD + 24h time + TZ)
@@ -121,12 +121,25 @@ MONTHS = {m: i for i, m in enumerate(
 )}
 
 TZ_TO_IANA = {
+    # North America
     "ET":"America/New_York","EST":"America/New_York","EDT":"America/New_York",
     "CT":"America/Chicago","CST":"America/Chicago","CDT":"America/Chicago",
     "MT":"America/Denver","MST":"America/Denver","MDT":"America/Denver",
     "PT":"America/Los_Angeles","PST":"America/Los_Angeles","PDT":"America/Los_Angeles",
     "UTC":"UTC","GMT":"UTC",
+    # Europe (added)
+    "CET":"Europe/Berlin","CEST":"Europe/Berlin",
+    "BST":"Europe/London","WEST":"Europe/Lisbon","WET":"Europe/Lisbon",
 }
+
+def _tzinfo_for_abbr(abbr: str) -> ZoneInfo:
+    key = (abbr or "").upper()
+    tzname = TZ_TO_IANA.get(key)
+    if not tzname:
+        # Fallback to ET with a warning
+        print(f"[warn] Unrecognized timezone abbreviation '{abbr}', defaulting to ET (America/New_York).", file=sys.stderr)
+        tzname = "America/New_York"
+    return ZoneInfo(tzname)
 
 def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.date) -> dt.datetime | None:
     """
@@ -149,8 +162,7 @@ def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.
                 hour = int(hh) % 12
                 if ampm.upper() == "PM": hour += 12
                 minute = int(mm)
-                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
-                src = ZoneInfo(tz)
+                src = _tzinfo_for_abbr(tz_abbr)
                 local = dt.datetime(year, mon, int(day), hour, minute, 0, tzinfo=src)
                 return local.astimezone(central)
 
@@ -160,8 +172,7 @@ def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.
                 hour = int(hh) % 12
                 if ampm.upper() == "PM": hour += 12
                 minute = int(mm)
-                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
-                src = ZoneInfo(tz)
+                src = _tzinfo_for_abbr(tz_abbr)
                 local = dt.datetime(date_context.year, date_context.month, date_context.day, hour, minute, 0, tzinfo=src)
                 return local.astimezone(central)
 
@@ -169,8 +180,7 @@ def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.
                 # "10/09 20:00 CET"
                 mon, day, hh, mm, tz_abbr = m.groups()
                 hour = int(hh); minute = int(mm)
-                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
-                src = ZoneInfo(tz)
+                src = _tzinfo_for_abbr(tz_abbr)
                 local = dt.datetime(year, int(mon), int(day), hour, minute, 0, tzinfo=src)
                 return local.astimezone(central)
 
@@ -178,8 +188,7 @@ def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.
                 # "20:00 ET" (no date → use date_context)
                 hh, mm, tz_abbr = m.groups()
                 hour = int(hh); minute = int(mm)
-                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
-                src = ZoneInfo(tz)
+                src = _tzinfo_for_abbr(tz_abbr)
                 local = dt.datetime(date_context.year, date_context.month, date_context.day, hour, minute, 0, tzinfo=src)
                 return local.astimezone(central)
 
@@ -188,8 +197,7 @@ def try_parse_time(payload: str, year: int, central: ZoneInfo, date_context: dt.
                 hh, ampm, tz_abbr = m.groups()
                 hour = int(hh) % 12
                 if ampm.upper() == "PM": hour += 12
-                tz = TZ_TO_IANA.get(tz_abbr.upper(), "America/New_York")
-                src = ZoneInfo(tz)
+                src = _tzinfo_for_abbr(tz_abbr)
                 local = dt.datetime(date_context.year, date_context.month, date_context.day, hour, 0, 0, tzinfo=src)
                 return local.astimezone(central)
 
@@ -291,7 +299,7 @@ def classify_channel(name: str, matched_prefix: str) -> tuple[str, str]:
     # Token normalize
     payload_upper = re.sub(r"\s+", " ", payload).strip().upper()
 
-    # Special-case generic exceptions like "Peacock : Studio"
+    # Special-case generic exceptions (currently none for Peacock per instruction)
     if matched_prefix and matched_prefix in SPECIAL_GENERIC_EXCEPTIONS:
         if payload_upper in SPECIAL_GENERIC_EXCEPTIONS[matched_prefix]:
             return "generic", payload
@@ -332,7 +340,8 @@ def build_xmltv(processed, programs):
         cid = chan_id(e)
         if cid in seen: continue
         seen.add(cid)
-        disp = e.tvg_name or e.display_name or cid
+        # Prefer tvg_name, then display_name, then tvg_id, then cid
+        disp = e.tvg_name or e.display_name or e.tvg_id or cid
         out.append(f'  <channel id="{xml_esc(cid)}">')
         out.append(f'    <display-name lang="en">{xml_esc(disp)}</display-name>')
         if e.group_title:
@@ -343,13 +352,16 @@ def build_xmltv(processed, programs):
     # programmes
     for e in processed:
         cid = chan_id(e)
-        for prog in programs.get(cid, []):
+        progs = programs.get(cid, [])
+        # Sort programmes by start time for readability/compatibility
+        progs_sorted = sorted(progs, key=lambda p: p["start"])
+        for prog in progs_sorted:
             out.append(
                 f'  <programme start="{fmt_xmltv_dt(prog["start"])}" stop="{fmt_xmltv_dt(prog["end"])}" channel="{xml_esc(cid)}">'
             )
             out.append(f'    <title lang="en">{xml_esc(prog["title"])}</title>')
             if prog.get("desc"):
-                out.append(f'    <desc lang="en">{xml_esc(prog["desc"])}"</desc>')
+                out.append(f'    <desc lang="en">{xml_esc(prog["desc"])}</desc>')
             out.append('  </programme>')
     out.append('</tv>')
     return "\n".join(out)
@@ -403,7 +415,7 @@ def main():
     # Build programs per channel
     for e, pref in zip(processed, matched_prefixes):
         cid = chan_id(e)
-        disp = (e.tvg_name or e.display_name or cid).strip()
+        disp = (e.tvg_name or e.display_name or e.tvg_id or cid).strip()
 
         classification, payload = classify_channel(disp, pref)
 
@@ -459,9 +471,9 @@ def main():
             ])
             for e, pref in zip(processed, matched_prefixes):
                 cid = chan_id(e)
-                disp = (e.tvg_name or e.display_name or cid).strip()
+                disp = (e.tvg_name or e.display_name or e.tvg_id or cid).strip()
                 classification, payload = classify_channel(disp, pref)
-                start_ct = try_parse_time(payload, year=tgt_date.year, central=ZoneInfo(args.tz), date_context=tgt_date) if classification=="event" else None
+                start_ct = try_parse_time(payload, year=tgt_date.year, central=central, date_context=tgt_date) if classification=="event" else None
                 w.writerow([
                     e.tvg_id, e.tvg_name, e.display_name, e.group_title, e.tvg_logo, e.url,
                     cid, pref, classification, payload.strip(),
