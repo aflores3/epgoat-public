@@ -3,6 +3,506 @@
 <!-- Target date: 2025-10-22 (America/Chicago) -->
 <!-- All timestamps in UTC -->
 <tv generator-info-name="EPGOAT-Linker-FilenameMode">
+  <channel id="dummy.epg__3696f019">
+    <display-name lang="en">NCAAF 01 : Middle Tennessee at Delaware @ 07:30 PM ET</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b70f1f83">
+    <display-name lang="en">NCAAF 02 : Missouri State at New Mexico State @ 09:00 PM ET</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__41884c07">
+    <display-name lang="en">NCAAF 03 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__486966d9">
+    <display-name lang="en">NCAAF 04 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__480b89cb">
+    <display-name lang="en">NCAAF 05 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__16185bbf">
+    <display-name lang="en">NCAAF 06 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__ce8dacd9">
+    <display-name lang="en">NCAAF 07 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__0f4a9d0b">
+    <display-name lang="en">NCAAF 08 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__e7007c16">
+    <display-name lang="en">NCAAF 09 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__acff6e1e">
+    <display-name lang="en">NCAAF 10 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__9e933217">
+    <display-name lang="en">NCAAF 11 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__f3575b09">
+    <display-name lang="en">NCAAF 12 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__d453808d">
+    <display-name lang="en">NCAAF 13 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__4a821680">
+    <display-name lang="en">NCAAF 14 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__2c17310f">
+    <display-name lang="en">NCAAF 15 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__cf784aac">
+    <display-name lang="en">NCAAF 16 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__c8559c09">
+    <display-name lang="en">NCAAF 17 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__91fa9bd6">
+    <display-name lang="en">NCAAF 18 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__f7a3a45a">
+    <display-name lang="en">NCAAF 19 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__f150828f">
+    <display-name lang="en">NCAAF 20 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b00c2ddc">
+    <display-name lang="en">NCAAF 21 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__3f73cded">
+    <display-name lang="en">NCAAF 22 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__517d204a">
+    <display-name lang="en">NCAAF 23 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__1732aa61">
+    <display-name lang="en">NCAAF 24 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__2ecdc036">
+    <display-name lang="en">NCAAF 25 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__45e5e460">
+    <display-name lang="en">NCAAF 26 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__3c84aedb">
+    <display-name lang="en">NCAAF 27 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b919729d">
+    <display-name lang="en">NCAAF 28 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__521faf4f">
+    <display-name lang="en">NCAAF 29 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__29e7a1e5">
+    <display-name lang="en">NCAAF 30 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__3ac04af3">
+    <display-name lang="en">NCAAF 31 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__872fc2ba">
+    <display-name lang="en">NCAAF 32 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__bca0f8f0">
+    <display-name lang="en">NCAAF 33 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__ca2b66db">
+    <display-name lang="en">NCAAF 34 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__1616a05e">
+    <display-name lang="en">NCAAF 35 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__7f2c2f99">
+    <display-name lang="en">NCAAF 36 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__90aa4502">
+    <display-name lang="en">NCAAF 37 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__8eb7ad7f">
+    <display-name lang="en">NCAAF 38 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__dc138772">
+    <display-name lang="en">NCAAF 39 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__db2d1271">
+    <display-name lang="en">NCAAF 40 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__5af82ba4">
+    <display-name lang="en">NCAAF 41 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__85bc1e27">
+    <display-name lang="en">NCAAF 42 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__4c297690">
+    <display-name lang="en">NCAAF 43 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__f4731238">
+    <display-name lang="en">NCAAF 44 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__5464d440">
+    <display-name lang="en">NCAAF 45 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__31ee6e96">
+    <display-name lang="en">NCAAF 46 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__e9b32aa0">
+    <display-name lang="en">NCAAF 47 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__ff48e170">
+    <display-name lang="en">NCAAF 48 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b92d4b9c">
+    <display-name lang="en">NCAAF 49 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__0afb13d8">
+    <display-name lang="en">NCAAF 50 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__c3d8c45e">
+    <display-name lang="en">NCAAF 51 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__0c91139e">
+    <display-name lang="en">NCAAF 52 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__0160fd93">
+    <display-name lang="en">NCAAF 53 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__701b9dce">
+    <display-name lang="en">NCAAF 54 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__989ddb78">
+    <display-name lang="en">NCAAF 55 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__9285aade">
+    <display-name lang="en">NCAAF 56 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__41b38f24">
+    <display-name lang="en">NCAAF 57 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__351faced">
+    <display-name lang="en">NCAAF 58 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__808da346">
+    <display-name lang="en">NCAAF 59 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__f1863fe8">
+    <display-name lang="en">NCAAF 60 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__6a108b42">
+    <display-name lang="en">NCAAF 61 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__aabe8ea6">
+    <display-name lang="en">NCAAF 62 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b4d1910a">
+    <display-name lang="en">NCAAF 63 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__391bd761">
+    <display-name lang="en">NCAAF 64 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__52c12768">
+    <display-name lang="en">NCAAF 65 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__d2f3f931">
+    <display-name lang="en">NCAAF 66 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__857a7e2a">
+    <display-name lang="en">NCAAF 67 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__59d49834">
+    <display-name lang="en">NCAAF 68 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__d3ece757">
+    <display-name lang="en">NCAAF 69 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__71d2a26e">
+    <display-name lang="en">NCAAF 70 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__7e57a5f2">
+    <display-name lang="en">NCAAF 71 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__fce944b1">
+    <display-name lang="en">NCAAF 72 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__8c64fc17">
+    <display-name lang="en">NCAAF 73 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__7e2e6cc6">
+    <display-name lang="en">NCAAF 74 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__4408ecad">
+    <display-name lang="en">NCAAF 75 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__6e78587c">
+    <display-name lang="en">NCAAF 76 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__6d704d10">
+    <display-name lang="en">NCAAF 77 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__d1195d83">
+    <display-name lang="en">NCAAF 78 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__28eaba4b">
+    <display-name lang="en">NCAAF 79 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__4f45669b">
+    <display-name lang="en">NCAAF 80 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__0f25507d">
+    <display-name lang="en">NCAAF 81 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__363f4868">
+    <display-name lang="en">NCAAF 82 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__16768e5c">
+    <display-name lang="en">NCAAF 83 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b0392502">
+    <display-name lang="en">NCAAF 84 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__30956322">
+    <display-name lang="en">NCAAF 85 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__007e50db">
+    <display-name lang="en">NCAAF 86 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__3c2e7ebb">
+    <display-name lang="en">NCAAF 87 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__271d9b30">
+    <display-name lang="en">NCAAF 88 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__2dce299e">
+    <display-name lang="en">NCAAF 89 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__fd6e1632">
+    <display-name lang="en">NCAAF 90 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__484ba470">
+    <display-name lang="en">NCAAF 91 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__18372784">
+    <display-name lang="en">NCAAF 92 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__6e8edda6">
+    <display-name lang="en">NCAAF 93 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__282a0151">
+    <display-name lang="en">NCAAF 94 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__3becaa13">
+    <display-name lang="en">NCAAF 95 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__ba7caf89">
+    <display-name lang="en">NCAAF 96 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__b0ff6203">
+    <display-name lang="en">NCAAF 97 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__0f817faf">
+    <display-name lang="en">NCAAF 98 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__1afe4efd">
+    <display-name lang="en">NCAAF 99 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
+  <channel id="dummy.epg__37f6b7fb">
+    <display-name lang="en">NCAAF 100 :</display-name>
+    <category lang="en">Sports • NCAAF 🏈</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/NCAAF.png" />
+  </channel>
   <channel id="dummy.epg__e858071e">
     <display-name lang="en">NBA 01: New York Knicks vs Cleveland Cavaliers @ 07:00 PM ET</display-name>
     <category lang="en">USA | NBA 🏀</category>
@@ -560,6 +1060,381 @@
   </channel>
   <channel id="dummy.epg__d071d94f">
     <display-name lang="en">Paramount+ 25:</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__88139198">
+    <display-name lang="en">Paramount+ 26 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__6dc39bb0">
+    <display-name lang="en">Paramount+ 27 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__46fdb935">
+    <display-name lang="en">Paramount+ 28 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__2d06fe6e">
+    <display-name lang="en">Paramount+ 29 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__16a4a7c4">
+    <display-name lang="en">Paramount+ 30 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ee7fcb2f">
+    <display-name lang="en">Paramount+ 31 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ca4e76a7">
+    <display-name lang="en">Paramount+ 32 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__aadaf870">
+    <display-name lang="en">Paramount+ 33 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__7e742b27">
+    <display-name lang="en">Paramount+ 34 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__3473fc00">
+    <display-name lang="en">Paramount+ 35 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__343cc4b8">
+    <display-name lang="en">Paramount+ 36 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__7ae6eb29">
+    <display-name lang="en">Paramount+ 37 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__a085cc7a">
+    <display-name lang="en">Paramount+ 38 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__04c95b53">
+    <display-name lang="en">Paramount+ 39 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__f5a46886">
+    <display-name lang="en">Paramount+ 40 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ecb17416">
+    <display-name lang="en">Paramount+ 41 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__98d18865">
+    <display-name lang="en">Paramount+ 42 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__5d541ed3">
+    <display-name lang="en">Paramount+ 43 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__595432eb">
+    <display-name lang="en">Paramount+ 44 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__71154b62">
+    <display-name lang="en">Paramount+ 45 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ffb0ff82">
+    <display-name lang="en">Paramount+ 46 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__96a7d3d9">
+    <display-name lang="en">Paramount+ 47 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__e3183c23">
+    <display-name lang="en">Paramount+ 48 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__f1407552">
+    <display-name lang="en">Paramount+ 49 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ad92bcde">
+    <display-name lang="en">Paramount+ 50 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__f9b3ea5b">
+    <display-name lang="en">Paramount+ 51 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__bff2f984">
+    <display-name lang="en">Paramount+ 52 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__8177f61c">
+    <display-name lang="en">Paramount+ 53 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__f97f5733">
+    <display-name lang="en">Paramount+ 54 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__cd6bd2d7">
+    <display-name lang="en">Paramount+ 55 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__4fc29c52">
+    <display-name lang="en">Paramount+ 56 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__b51501ba">
+    <display-name lang="en">Paramount+ 57 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__d1c5eb45">
+    <display-name lang="en">Paramount+ 58 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__bff2ba52">
+    <display-name lang="en">Paramount+ 59 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__c0f95144">
+    <display-name lang="en">Paramount+ 60 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ecc3afc1">
+    <display-name lang="en">Paramount+ 61 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__2822cc9a">
+    <display-name lang="en">Paramount+ 62 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__d522d44c">
+    <display-name lang="en">Paramount+ 63 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__4488a29d">
+    <display-name lang="en">Paramount+ 64 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__a927a1f3">
+    <display-name lang="en">Paramount+ 65 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__bb5e2f7a">
+    <display-name lang="en">Paramount+ 66 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__1ed909fa">
+    <display-name lang="en">Paramount+ 67 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__fa0cfbc8">
+    <display-name lang="en">Paramount+ 68 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__9b6c013b">
+    <display-name lang="en">Paramount+ 69 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__083677aa">
+    <display-name lang="en">Paramount+ 70 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__7b267c27">
+    <display-name lang="en">Paramount+ 71 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__36c61165">
+    <display-name lang="en">Paramount+ 72 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ba1d4f09">
+    <display-name lang="en">Paramount+ 73 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__9242fcd1">
+    <display-name lang="en">Paramount+ 74 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__524691e7">
+    <display-name lang="en">Paramount+ 75 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__79abe60e">
+    <display-name lang="en">Paramount+ 76 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__0f6ce413">
+    <display-name lang="en">Paramount+ 77 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__d6889544">
+    <display-name lang="en">Paramount+ 78 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__62e95f2a">
+    <display-name lang="en">Paramount+ 79 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__ce713a6d">
+    <display-name lang="en">Paramount+ 80 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__8e3e61aa">
+    <display-name lang="en">Paramount+ 81 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__bb259f4f">
+    <display-name lang="en">Paramount+ 82 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__0884d75e">
+    <display-name lang="en">Paramount+ 83 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__c69a029e">
+    <display-name lang="en">Paramount+ 84 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__3a1fde7c">
+    <display-name lang="en">Paramount+ 85 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__0c4bc2ac">
+    <display-name lang="en">Paramount+ 86 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__25b3c3dd">
+    <display-name lang="en">Paramount+ 87 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__44b2c518">
+    <display-name lang="en">Paramount+ 88 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__f0147677">
+    <display-name lang="en">Paramount+ 89 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__76cece48">
+    <display-name lang="en">Paramount+ 90 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__0247feb6">
+    <display-name lang="en">Paramount+ 91 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__cc25f99d">
+    <display-name lang="en">Paramount+ 92 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__c72a9fc3">
+    <display-name lang="en">Paramount+ 93 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__d7e6b0a7">
+    <display-name lang="en">Paramount+ 94 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__70e290f3">
+    <display-name lang="en">Paramount+ 95 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__a177902e">
+    <display-name lang="en">Paramount+ 96 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__b8c797b1">
+    <display-name lang="en">Paramount+ 97 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__3c189453">
+    <display-name lang="en">Paramount+ 98 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__7e081172">
+    <display-name lang="en">Paramount+ 99 :</display-name>
+    <category lang="en">USA | Paramount+ Sports Event</category>
+    <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
+  </channel>
+  <channel id="dummy.epg__b88f2592">
+    <display-name lang="en">Paramount+ 100 :</display-name>
     <category lang="en">USA | Paramount+ Sports Event</category>
     <icon src="https://variety.com/wp-content/uploads/2021/02/Paramount-Plus.png" />
   </channel>
@@ -7540,6 +8415,506 @@
     <category lang="en">USA | Flo Sports</category>
     <icon src="https://www.flosports.tv/wp-content/themes/flosports/dist/images/logo-red-black.svg" />
   </channel>
+  <channel id="dummy.epg__436a9c32">
+    <display-name lang="en">Flo Racing 01 : FloRacing 24/7 (FloRacing 247) (2025-09-28 04:00:00)</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__eb1c2293">
+    <display-name lang="en">Flo Racing 02 : KUBOTA HIGH LIMIT RACING CHAMPIONSHIP AWARDS BANQUET @ OCT 19 07:00PM ET</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__30b6a205">
+    <display-name lang="en">Flo Racing 03 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__c4dd9d1f">
+    <display-name lang="en">Flo Racing 04 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__ec06ecc0">
+    <display-name lang="en">Flo Racing 05 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__a2b033ec">
+    <display-name lang="en">Flo Racing 06 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__7178a46d">
+    <display-name lang="en">Flo Racing 07 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__e833991c">
+    <display-name lang="en">Flo Racing 08 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__db1922ea">
+    <display-name lang="en">Flo Racing 09 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__235df2d4">
+    <display-name lang="en">Flo Racing 10 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__c774bea8">
+    <display-name lang="en">Flo Racing 11 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__c4f2f962">
+    <display-name lang="en">Flo Racing 12 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__9954f589">
+    <display-name lang="en">Flo Racing 13 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__0e2c5477">
+    <display-name lang="en">Flo Racing 14 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__2fc0479b">
+    <display-name lang="en">Flo Racing 15 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__dd4b72fc">
+    <display-name lang="en">Flo Racing 16 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__9729ac07">
+    <display-name lang="en">Flo Racing 17 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__010e93f7">
+    <display-name lang="en">Flo Racing 18 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__4e5d564d">
+    <display-name lang="en">Flo Racing 19 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__f7cd8cb6">
+    <display-name lang="en">Flo Racing 20 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__df32a38c">
+    <display-name lang="en">Flo Racing 21 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__6c4525b1">
+    <display-name lang="en">Flo Racing 22 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__d59187c4">
+    <display-name lang="en">Flo Racing 23 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__3bdf3e1a">
+    <display-name lang="en">Flo Racing 24 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__6d486c51">
+    <display-name lang="en">Flo Racing 25 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__d6632edf">
+    <display-name lang="en">Flo Racing 26 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__a445a654">
+    <display-name lang="en">Flo Racing 27 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__d4e7fe1b">
+    <display-name lang="en">Flo Racing 28 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__57b25456">
+    <display-name lang="en">Flo Racing 29 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__e0b6aaf1">
+    <display-name lang="en">Flo Racing 30 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__b9b68167">
+    <display-name lang="en">Flo Racing 31 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__b0c309f9">
+    <display-name lang="en">Flo Racing 32 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__f3578d13">
+    <display-name lang="en">Flo Racing 33 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__785720b7">
+    <display-name lang="en">Flo Racing 34 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__437eacb0">
+    <display-name lang="en">Flo Racing 35 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__5c2e89b0">
+    <display-name lang="en">Flo Racing 36 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__2e6a4ee9">
+    <display-name lang="en">Flo Racing 37 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__94720421">
+    <display-name lang="en">Flo Racing 38 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__bc9f8de7">
+    <display-name lang="en">Flo Racing 39 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__263e8c16">
+    <display-name lang="en">Flo Racing 40 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__d1adce95">
+    <display-name lang="en">Flo Racing 41 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__5e72ba7a">
+    <display-name lang="en">Flo Racing 42 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__74aec188">
+    <display-name lang="en">Flo Racing 43 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__9c4f19be">
+    <display-name lang="en">Flo Racing 44 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__3f9e9e1c">
+    <display-name lang="en">Flo Racing 45 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__9efdba09">
+    <display-name lang="en">Flo Racing 46 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__22d3189b">
+    <display-name lang="en">Flo Racing 47 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__b1a27057">
+    <display-name lang="en">Flo Racing 48 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__8947a5df">
+    <display-name lang="en">Flo Racing 49 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__1fd19900">
+    <display-name lang="en">Flo Racing 50 :</display-name>
+    <category lang="en">USA | Flo Racing</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloRacing.us.png" />
+  </channel>
+  <channel id="dummy.epg__aacaf0fd">
+    <display-name lang="en">Flo Football 01 : Albright vs Gallaudet (Albright vs Gallaudet) (2025-09-05 18:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__827f1e17">
+    <display-name lang="en">Flo Football 02 : Dickinson vs Randolph-Macon (Dickinson vs Randolph-Macon) (2025-09-05 18:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__361081a8">
+    <display-name lang="en">Flo Football 03 : Montclair State vs USMMA (Montclair State vs USMMA) (2025-09-05 18:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__f6ca7c25">
+    <display-name lang="en">Flo Football 04 : Slippery Rock vs Franklin Pierce (Slippery Rock vs Franklin Pierce) (2025-09-05 18:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__526f27da">
+    <display-name lang="en">Flo Football 05 : Bergen Cath. (NJ) vs W. Boca Raton (FL) (Bergen Cath. (NJ) vs W. Boca Raton (FL)) (2025-09-05 18:30:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__c0864db2">
+    <display-name lang="en">Flo Football 06 : Hun (NJ) vs Archbishop Spalding (MD) (Hun (NJ) vs Archbishop Spalding (MD)) (2025-09-05 19:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__4bfae954">
+    <display-name lang="en">Flo Football 07 : McDaniel vs Catholic (McDaniel vs Catholic) (2025-09-05 19:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__cdc0c05c">
+    <display-name lang="en">Flo Football 08 : Hough (NC) vs Highland Springs (VA) (Hough (NC) vs Highland Springs (VA)) (2025-09-05 19:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__2b601203">
+    <display-name lang="en">Flo Football 09 : DePaul Cath (NJ) vs Good Counsel (MD) (DePaul Cath (NJ) vs Good Counsel (MD)) (2025-09-05 19:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__2fd08f00">
+    <display-name lang="en">Flo Football 10 : Monarch (FL) vs Don Bosco Prep (NJ) (Monarch (FL) vs Don Bosco Prep (NJ)) (2025-09-05 19:00:00)</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__0a8f329e">
+    <display-name lang="en">Flo Football 11 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__7cc4e5c9">
+    <display-name lang="en">Flo Football 12 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__9855ef65">
+    <display-name lang="en">Flo Football 13 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__b2b7c9c3">
+    <display-name lang="en">Flo Football 14 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__6e8af828">
+    <display-name lang="en">Flo Football 15 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__52c01513">
+    <display-name lang="en">Flo Football 16 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__f5076b7c">
+    <display-name lang="en">Flo Football 17 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__9e53e4e2">
+    <display-name lang="en">Flo Football 18 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__2df7d30a">
+    <display-name lang="en">Flo Football 19 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__7581a174">
+    <display-name lang="en">Flo Football 20 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__2bac4995">
+    <display-name lang="en">Flo Football 21 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__d7fddc2f">
+    <display-name lang="en">Flo Football 22 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__f1de4a5f">
+    <display-name lang="en">Flo Football 23 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__42de559f">
+    <display-name lang="en">Flo Football 24 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__204fceb0">
+    <display-name lang="en">Flo Football 25 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__d6f79368">
+    <display-name lang="en">Flo Football 26 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__035ec49e">
+    <display-name lang="en">Flo Football 27 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__8afbb277">
+    <display-name lang="en">Flo Football 28 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__6e2992b2">
+    <display-name lang="en">Flo Football 29 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__cb5ab641">
+    <display-name lang="en">Flo Football 30 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__c016f22d">
+    <display-name lang="en">Flo Football 31 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__08c47dcd">
+    <display-name lang="en">Flo Football 32 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__b9489168">
+    <display-name lang="en">Flo Football 33 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__a31618e7">
+    <display-name lang="en">Flo Football 34 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__a397ca2c">
+    <display-name lang="en">Flo Football 35 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__354a58cc">
+    <display-name lang="en">Flo Football 36 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__3a4576ef">
+    <display-name lang="en">Flo Football 37 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__05a34708">
+    <display-name lang="en">Flo Football 38 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__da38ad17">
+    <display-name lang="en">Flo Football 39 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__45862a85">
+    <display-name lang="en">Flo Football 40 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__9a3585f2">
+    <display-name lang="en">Flo Football 41 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__2eb20bce">
+    <display-name lang="en">Flo Football 42 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__afb553ed">
+    <display-name lang="en">Flo Football 43 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__9fbd699c">
+    <display-name lang="en">Flo Football 44 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__ca467616">
+    <display-name lang="en">Flo Football 45 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__15900c51">
+    <display-name lang="en">Flo Football 46 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__c21285f2">
+    <display-name lang="en">Flo Football 47 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__a0109b8a">
+    <display-name lang="en">Flo Football 48 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__934100a6">
+    <display-name lang="en">Flo Football 49 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
+  <channel id="dummy.epg__209a432e">
+    <display-name lang="en">Flo Football 50 :</display-name>
+    <category lang="en">USA | Flo Football</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/FloCollege.us.png" />
+  </channel>
   <channel id="dummy.epg__d8a8992a">
     <display-name lang="en">Peacock 01:</display-name>
     <category lang="en">USA | Peacock Events</category>
@@ -7827,6 +9202,116 @@
   </channel>
   <channel id="dummy.epg__7d8f5992">
     <display-name lang="en">BIG10+ 28:</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__ae5634a3">
+    <display-name lang="en">BIG10+ 29 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__1d4ea20f">
+    <display-name lang="en">BIG10+ 30 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__28e61682">
+    <display-name lang="en">BIG10+ 31 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__9760084c">
+    <display-name lang="en">BIG10+ 32 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__d5b764ae">
+    <display-name lang="en">BIG10+ 33 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__7fe15e72">
+    <display-name lang="en">BIG10+ 34 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__00ac7f6b">
+    <display-name lang="en">BIG10+ 35 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__fc03e793">
+    <display-name lang="en">BIG10+ 36 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__46456a93">
+    <display-name lang="en">BIG10+ 37 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__67efc455">
+    <display-name lang="en">BIG10+ 38 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__a96c2a3a">
+    <display-name lang="en">BIG10+ 39 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__64a101aa">
+    <display-name lang="en">BIG10+ 40 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__1dacbe5b">
+    <display-name lang="en">BIG10+ 41 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__b71232a6">
+    <display-name lang="en">BIG10+ 42 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__c585572f">
+    <display-name lang="en">BIG10+ 43 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__a0ceb916">
+    <display-name lang="en">BIG10+ 44 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__d5dbc457">
+    <display-name lang="en">BIG10+ 45 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__b3b794dc">
+    <display-name lang="en">BIG10+ 46 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__b1a006c3">
+    <display-name lang="en">BIG10+ 47 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__fcd66634">
+    <display-name lang="en">BIG10+ 48 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__b0288896">
+    <display-name lang="en">BIG10+ 49 :</display-name>
+    <category lang="en">USA | BIG10+</category>
+    <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
+  </channel>
+  <channel id="dummy.epg__6a2119cf">
+    <display-name lang="en">BIG10+ 50 :</display-name>
     <category lang="en">USA | BIG10+</category>
     <icon src="https://static.wikia.nocookie.net/logopedia/images/e/e9/B1G_Plus_app.png" />
   </channel>
@@ -8225,6 +9710,21 @@
     <category lang="en">Live | Ligue1</category>
     <icon src="https://vectorseek.com/wp-content/uploads/2024/04/LIGUE-1-New-Logo-Vector.png" />
   </channel>
+  <channel id="dummy.epg__18f83a94">
+    <display-name lang="en">UEFA Champions League 01 : Galatasaray 17:45 Bodø/Glimt 22/10</display-name>
+    <category lang="en">Live | UEFA Champions League</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/P%2BUEFAChampionsLeague1.us.png" />
+  </channel>
+  <channel id="dummy.epg__eba6b21a">
+    <display-name lang="en">UEFA Champions League 02 : Athletic Club 17:45 Qarabağ  22/10</display-name>
+    <category lang="en">Live | UEFA Champions League</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/P%2BUEFAChampionsLeague2.us.png" />
+  </channel>
+  <channel id="dummy.epg__10a4341a">
+    <display-name lang="en">UEFA Champions League 03 : Real Madrid 20:00 Juventus  22/10</display-name>
+    <category lang="en">Live | UEFA Champions League</category>
+    <icon src="https://cdn.iptvboss.pro/logos/USA/P%2BUEFAChampionsLeague3.us.png" />
+  </channel>
   <channel id="dummy.epg__e851f844">
     <display-name lang="en">UEFA Champions League 04: Chelsea 20:00 Ajax 22/10</display-name>
     <category lang="en">Live | UEFA Champions League</category>
@@ -8340,6 +9840,51 @@
     <category lang="en">Live | UEFA Europa League</category>
     <icon src="https://cdn.iptvboss.pro/logos/USA/P%2BUEFAEuropaLeague18.us.png" />
   </channel>
+  <channel id="dummy.epg__bc8644be">
+    <display-name lang="en">Tennis 09 : ATP Basel: Bopanna R / Shelton B - Nys H / Roger-Vasselin E @ 22 Oct 08:50 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__5461a95a">
+    <display-name lang="en">Tennis 10 : ATP Vienna: Heliovaara H / Patten H - Melo M / Zverev A @ 22 Oct 09:00 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__a8e06b3b">
+    <display-name lang="en">Tennis 12 : ATP Vienna: Salisbury J / Skupski N - Cerundolo F / Ugo Carabelli C @ 22 Oct 09:40 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__eb84ead7">
+    <display-name lang="en">Tennis 13 : ATP Basel: Harrison C / King E - Nouza P / Rikl P @ 22 Oct 10:00 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__61eb21df">
+    <display-name lang="en">Tennis 14 : ITF W100 Wrexham: Bush T / Cooling R - Banks A / Ryser V @ 22 Oct 10:30 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__a07f73b8">
+    <display-name lang="en">Tennis 16 : ATP Vienna: Arevalo M / Pavic M - Cobolli F / Moutet C @ 22 Oct 10:50 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__fc526ec0">
+    <display-name lang="en">Tennis 19 : ITF W100 Wrexham: Christie F / Miyazaki Y L - Primorac I / Tran D @ 22 Oct 11:50 AM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__5713be35">
+    <display-name lang="en">Tennis 20 : ATP Vienna: Michelsen A / Peers J - Cabral F / Miedler L @ 22 Oct 12:00 PM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
+  <channel id="dummy.epg__a8a79004">
+    <display-name lang="en">Tennis 28 : ATP Challenger Sioux Falls: Draxl L / Schachter N - Banthia S / Hach Verdugo H @ 22 Oct 07:10 PM ET</display-name>
+    <category lang="en">LIVE | Tennis Channel Events</category>
+    <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
+  </channel>
   <channel id="dummy.epg__7361fc53">
     <display-name lang="en">Tennis 29:</display-name>
     <category lang="en">LIVE | Tennis Channel Events</category>
@@ -8445,6 +9990,321 @@
     <category lang="en">LIVE | Tennis Channel Events</category>
     <icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tennis_Channel_logo.svg/800px-Tennis_Channel_logo.svg.png" />
   </channel>
+  <programme start="20251022050000 +0000" stop="20251022233000 +0000" channel="dummy.epg__3696f019">
+    <title lang="en">Airing Next: : Middle Tennessee at Delaware @ 07:30 PM ET @ Oct 22 06:30 PM CT</title>
+  </programme>
+  <programme start="20251022233000 +0000" stop="20251023023000 +0000" channel="dummy.epg__3696f019">
+    <title lang="en">● : Middle Tennessee at Delaware @ 07:30 PM ET ●</title>
+  </programme>
+  <programme start="20251023023000 +0000" stop="20251023043000 +0000" channel="dummy.epg__3696f019">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023043000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3696f019">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023010000 +0000" channel="dummy.epg__b70f1f83">
+    <title lang="en">Airing Next: : Missouri State at New Mexico State @ 09:00 PM ET @ Oct 22 08:00 PM CT</title>
+  </programme>
+  <programme start="20251023010000 +0000" stop="20251023040000 +0000" channel="dummy.epg__b70f1f83">
+    <title lang="en">● : Missouri State at New Mexico State @ 09:00 PM ET ●</title>
+  </programme>
+  <programme start="20251023040000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b70f1f83">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__41884c07">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__486966d9">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__480b89cb">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__16185bbf">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ce8dacd9">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0f4a9d0b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__e7007c16">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__acff6e1e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9e933217">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f3575b09">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d453808d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4a821680">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2c17310f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__cf784aac">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c8559c09">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__91fa9bd6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f7a3a45a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f150828f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b00c2ddc">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3f73cded">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__517d204a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1732aa61">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2ecdc036">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__45e5e460">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3c84aedb">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b919729d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__521faf4f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__29e7a1e5">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3ac04af3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__872fc2ba">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bca0f8f0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ca2b66db">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1616a05e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7f2c2f99">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__90aa4502">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__8eb7ad7f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__dc138772">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__db2d1271">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5af82ba4">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__85bc1e27">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4c297690">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f4731238">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5464d440">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__31ee6e96">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__e9b32aa0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ff48e170">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b92d4b9c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0afb13d8">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c3d8c45e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0c91139e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0160fd93">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__701b9dce">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__989ddb78">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9285aade">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__41b38f24">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__351faced">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__808da346">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f1863fe8">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6a108b42">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__aabe8ea6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b4d1910a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__391bd761">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__52c12768">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d2f3f931">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__857a7e2a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__59d49834">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d3ece757">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__71d2a26e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7e57a5f2">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__fce944b1">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__8c64fc17">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7e2e6cc6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4408ecad">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6e78587c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6d704d10">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d1195d83">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__28eaba4b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4f45669b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0f25507d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__363f4868">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__16768e5c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b0392502">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__30956322">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__007e50db">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3c2e7ebb">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__271d9b30">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2dce299e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__fd6e1632">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__484ba470">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__18372784">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6e8edda6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__282a0151">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3becaa13">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ba7caf89">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b0ff6203">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0f817faf">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1afe4efd">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__37f6b7fb">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
   <programme start="20251022050000 +0000" stop="20251022230000 +0000" channel="dummy.epg__e858071e">
     <title lang="en">Airing Next: New York Knicks vs Cleveland Cavaliers @ 07:00 PM ET @ Oct 22 06:00 PM CT</title>
   </programme>
@@ -11711,6 +13571,231 @@
   </programme>
   <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d071d94f">
     <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__88139198">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6dc39bb0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__46fdb935">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2d06fe6e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__16a4a7c4">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ee7fcb2f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ca4e76a7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__aadaf870">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7e742b27">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3473fc00">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__343cc4b8">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7ae6eb29">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a085cc7a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__04c95b53">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f5a46886">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ecb17416">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__98d18865">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5d541ed3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__595432eb">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__71154b62">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ffb0ff82">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__96a7d3d9">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__e3183c23">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f1407552">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ad92bcde">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f9b3ea5b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bff2f984">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__8177f61c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f97f5733">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__cd6bd2d7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4fc29c52">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b51501ba">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d1c5eb45">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bff2ba52">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c0f95144">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ecc3afc1">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2822cc9a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d522d44c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4488a29d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a927a1f3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bb5e2f7a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1ed909fa">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__fa0cfbc8">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9b6c013b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__083677aa">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7b267c27">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__36c61165">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ba1d4f09">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9242fcd1">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__524691e7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__79abe60e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0f6ce413">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d6889544">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__62e95f2a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ce713a6d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__8e3e61aa">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bb259f4f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0884d75e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c69a029e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3a1fde7c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0c4bc2ac">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__25b3c3dd">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__44b2c518">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f0147677">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__76cece48">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0247feb6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__cc25f99d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c72a9fc3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d7e6b0a7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__70e290f3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a177902e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b8c797b1">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3c189453">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7e081172">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b88f2592">
+    <title lang="en">Airing Next: : (Time TBA)</title>
   </programme>
   <programme start="20251022050000 +0000" stop="20251022133000 +0000" channel="dummy.epg__1d080cb2">
     <title lang="en">Airing Next: : Big 12 Men's Basketball Media Days (Main Stage Pressers) @ Oct 22 09:30 AM ET @ Oct 22 08:30 AM CT</title>
@@ -45561,6 +47646,306 @@
   <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__79cc6700">
     <title lang="en">No Programming Today.</title>
   </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__436a9c32">
+    <title lang="en">Airing Next: : FloRacing 24/7 (FloRacing 247) (2025-09-28 04:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__eb1c2293">
+    <title lang="en">Airing Next: : KUBOTA HIGH LIMIT RACING CHAMPIONSHIP AWARDS BANQUET @ OCT 19 07:00PM ET @ Oct 19 06:00 PM CT</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__30b6a205">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c4dd9d1f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ec06ecc0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a2b033ec">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7178a46d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__e833991c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__db1922ea">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__235df2d4">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c774bea8">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c4f2f962">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9954f589">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0e2c5477">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2fc0479b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__dd4b72fc">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9729ac07">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__010e93f7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4e5d564d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f7cd8cb6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__df32a38c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6c4525b1">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d59187c4">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3bdf3e1a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6d486c51">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d6632edf">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a445a654">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d4e7fe1b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__57b25456">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__e0b6aaf1">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b9b68167">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b0c309f9">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f3578d13">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__785720b7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__437eacb0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5c2e89b0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2e6a4ee9">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__94720421">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bc9f8de7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__263e8c16">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d1adce95">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5e72ba7a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__74aec188">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9c4f19be">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3f9e9e1c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9efdba09">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__22d3189b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b1a27057">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__8947a5df">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1fd19900">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__aacaf0fd">
+    <title lang="en">Airing Next: : Albright vs Gallaudet (Albright vs Gallaudet) (2025-09-05 18:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__827f1e17">
+    <title lang="en">Airing Next: : Dickinson vs Randolph-Macon (Dickinson vs Randolph-Macon) (2025-09-05 18:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__361081a8">
+    <title lang="en">Airing Next: : Montclair State vs USMMA (Montclair State vs USMMA) (2025-09-05 18:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f6ca7c25">
+    <title lang="en">Airing Next: : Slippery Rock vs Franklin Pierce (Slippery Rock vs Franklin Pierce) (2025-09-05 18:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__526f27da">
+    <title lang="en">Airing Next: : Bergen Cath. (NJ) vs W. Boca Raton (FL) (Bergen Cath. (NJ) vs W. Boca Raton (FL)) (2025-09-05 18:30:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c0864db2">
+    <title lang="en">Airing Next: : Hun (NJ) vs Archbishop Spalding (MD) (Hun (NJ) vs Archbishop Spalding (MD)) (2025-09-05 19:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__4bfae954">
+    <title lang="en">Airing Next: : McDaniel vs Catholic (McDaniel vs Catholic) (2025-09-05 19:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__cdc0c05c">
+    <title lang="en">Airing Next: : Hough (NC) vs Highland Springs (VA) (Hough (NC) vs Highland Springs (VA)) (2025-09-05 19:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2b601203">
+    <title lang="en">Airing Next: : DePaul Cath (NJ) vs Good Counsel (MD) (DePaul Cath (NJ) vs Good Counsel (MD)) (2025-09-05 19:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2fd08f00">
+    <title lang="en">Airing Next: : Monarch (FL) vs Don Bosco Prep (NJ) (Monarch (FL) vs Don Bosco Prep (NJ)) (2025-09-05 19:00:00) (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__0a8f329e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7cc4e5c9">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9855ef65">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b2b7c9c3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6e8af828">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__52c01513">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f5076b7c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9e53e4e2">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2df7d30a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7581a174">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2bac4995">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d7fddc2f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__f1de4a5f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__42de559f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__204fceb0">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d6f79368">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__035ec49e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__8afbb277">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6e2992b2">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__cb5ab641">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c016f22d">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__08c47dcd">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b9489168">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a31618e7">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a397ca2c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__354a58cc">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__3a4576ef">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__05a34708">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__da38ad17">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__45862a85">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9a3585f2">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2eb20bce">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__afb553ed">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9fbd699c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ca467616">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__15900c51">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c21285f2">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a0109b8a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__934100a6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__209a432e">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
   <programme start="20251022050000 +0000" stop="20251022070000 +0000" channel="dummy.epg__d8a8992a">
     <title lang="en">No Programming Today.</title>
   </programme>
@@ -47627,6 +50012,72 @@
   </programme>
   <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7d8f5992">
     <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__ae5634a3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1d4ea20f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__28e61682">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__9760084c">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d5b764ae">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__7fe15e72">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__00ac7f6b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__fc03e793">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__46456a93">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__67efc455">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a96c2a3a">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__64a101aa">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__1dacbe5b">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b71232a6">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__c585572f">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a0ceb916">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__d5dbc457">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b3b794dc">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b1a006c3">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__fcd66634">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__b0288896">
+    <title lang="en">Airing Next: : (Time TBA)</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023050000 +0000" channel="dummy.epg__6a2119cf">
+    <title lang="en">Airing Next: : (Time TBA)</title>
   </programme>
   <programme start="20251022050000 +0000" stop="20251022165500 +0000" channel="dummy.epg__d671d62d">
     <title lang="en">Airing Next: Konyaspor vs Beşiktaş @ Oct 22 12:55PM ET @ Oct 22 11:55 AM CT</title>
@@ -49842,6 +52293,45 @@
   <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__eebbe5f8">
     <title lang="en">No Programming Today.</title>
   </programme>
+  <programme start="20251022050000 +0000" stop="20251022214500 +0000" channel="dummy.epg__18f83a94">
+    <title lang="en">Airing Next: : Galatasaray 17:45 Bodø/Glimt 22/10 @ Oct 22 04:45 PM CT</title>
+  </programme>
+  <programme start="20251022214500 +0000" stop="20251023004500 +0000" channel="dummy.epg__18f83a94">
+    <title lang="en">● : Galatasaray 17:45 Bodø/Glimt 22/10 ●</title>
+  </programme>
+  <programme start="20251023004500 +0000" stop="20251023024500 +0000" channel="dummy.epg__18f83a94">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023024500 +0000" stop="20251023044500 +0000" channel="dummy.epg__18f83a94">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023044500 +0000" stop="20251023050000 +0000" channel="dummy.epg__18f83a94">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022214500 +0000" channel="dummy.epg__eba6b21a">
+    <title lang="en">Airing Next: : Athletic Club 17:45 Qarabağ  22/10 @ Oct 22 04:45 PM CT</title>
+  </programme>
+  <programme start="20251022214500 +0000" stop="20251023004500 +0000" channel="dummy.epg__eba6b21a">
+    <title lang="en">● : Athletic Club 17:45 Qarabağ  22/10 ●</title>
+  </programme>
+  <programme start="20251023004500 +0000" stop="20251023024500 +0000" channel="dummy.epg__eba6b21a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023024500 +0000" stop="20251023044500 +0000" channel="dummy.epg__eba6b21a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023044500 +0000" stop="20251023050000 +0000" channel="dummy.epg__eba6b21a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251023000000 +0000" channel="dummy.epg__10a4341a">
+    <title lang="en">Airing Next: : Real Madrid 20:00 Juventus  22/10 @ Oct 22 07:00 PM CT</title>
+  </programme>
+  <programme start="20251023000000 +0000" stop="20251023030000 +0000" channel="dummy.epg__10a4341a">
+    <title lang="en">● : Real Madrid 20:00 Juventus  22/10 ●</title>
+  </programme>
+  <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__10a4341a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
   <programme start="20251022050000 +0000" stop="20251023000000 +0000" channel="dummy.epg__e851f844">
     <title lang="en">Airing Next: Chelsea 20:00 Ajax 22/10 @ Oct 22 07:00 PM CT</title>
   </programme>
@@ -50095,6 +52585,216 @@
     <title lang="en">● SK Sturm Graz 20:00 Rangers FC 02/10 ●</title>
   </programme>
   <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__2072a8a5">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022125000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">Airing Next: : ATP Basel: Bopanna R / Shelton B - Nys H / Roger-Vasselin E @ 22 Oct 08:50 AM ET @ Oct 22 07:50 AM CT</title>
+  </programme>
+  <programme start="20251022125000 +0000" stop="20251022155000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">● : ATP Basel: Bopanna R / Shelton B - Nys H / Roger-Vasselin E @ 22 Oct 08:50 AM ET ●</title>
+  </programme>
+  <programme start="20251022155000 +0000" stop="20251022175000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022175000 +0000" stop="20251022195000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022195000 +0000" stop="20251022215000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022215000 +0000" stop="20251022235000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022235000 +0000" stop="20251023015000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023015000 +0000" stop="20251023035000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023035000 +0000" stop="20251023050000 +0000" channel="dummy.epg__bc8644be">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022130000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">Airing Next: : ATP Vienna: Heliovaara H / Patten H - Melo M / Zverev A @ 22 Oct 09:00 AM ET @ Oct 22 08:00 AM CT</title>
+  </programme>
+  <programme start="20251022130000 +0000" stop="20251022160000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">● : ATP Vienna: Heliovaara H / Patten H - Melo M / Zverev A @ 22 Oct 09:00 AM ET ●</title>
+  </programme>
+  <programme start="20251022160000 +0000" stop="20251022180000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022180000 +0000" stop="20251022200000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022200000 +0000" stop="20251022220000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022220000 +0000" stop="20251023000000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023000000 +0000" stop="20251023020000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023020000 +0000" stop="20251023040000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023040000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5461a95a">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022134000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">Airing Next: : ATP Vienna: Salisbury J / Skupski N - Cerundolo F / Ugo Carabelli C @ 22 Oct 09:40 AM ET @ Oct 22 08:40 AM CT</title>
+  </programme>
+  <programme start="20251022134000 +0000" stop="20251022164000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">● : ATP Vienna: Salisbury J / Skupski N - Cerundolo F / Ugo Carabelli C @ 22 Oct 09:40 AM ET ●</title>
+  </programme>
+  <programme start="20251022164000 +0000" stop="20251022184000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022184000 +0000" stop="20251022204000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022204000 +0000" stop="20251022224000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022224000 +0000" stop="20251023004000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023004000 +0000" stop="20251023024000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023024000 +0000" stop="20251023044000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023044000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a8e06b3b">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022140000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">Airing Next: : ATP Basel: Harrison C / King E - Nouza P / Rikl P @ 22 Oct 10:00 AM ET @ Oct 22 09:00 AM CT</title>
+  </programme>
+  <programme start="20251022140000 +0000" stop="20251022170000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">● : ATP Basel: Harrison C / King E - Nouza P / Rikl P @ 22 Oct 10:00 AM ET ●</title>
+  </programme>
+  <programme start="20251022170000 +0000" stop="20251022190000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022190000 +0000" stop="20251022210000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022210000 +0000" stop="20251022230000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022230000 +0000" stop="20251023010000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023010000 +0000" stop="20251023030000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__eb84ead7">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022143000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">Airing Next: : ITF W100 Wrexham: Bush T / Cooling R - Banks A / Ryser V @ 22 Oct 10:30 AM ET @ Oct 22 09:30 AM CT</title>
+  </programme>
+  <programme start="20251022143000 +0000" stop="20251022173000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">● : ITF W100 Wrexham: Bush T / Cooling R - Banks A / Ryser V @ 22 Oct 10:30 AM ET ●</title>
+  </programme>
+  <programme start="20251022173000 +0000" stop="20251022193000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022193000 +0000" stop="20251022213000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022213000 +0000" stop="20251022233000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022233000 +0000" stop="20251023013000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023013000 +0000" stop="20251023033000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023033000 +0000" stop="20251023050000 +0000" channel="dummy.epg__61eb21df">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022145000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">Airing Next: : ATP Vienna: Arevalo M / Pavic M - Cobolli F / Moutet C @ 22 Oct 10:50 AM ET @ Oct 22 09:50 AM CT</title>
+  </programme>
+  <programme start="20251022145000 +0000" stop="20251022175000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">● : ATP Vienna: Arevalo M / Pavic M - Cobolli F / Moutet C @ 22 Oct 10:50 AM ET ●</title>
+  </programme>
+  <programme start="20251022175000 +0000" stop="20251022195000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022195000 +0000" stop="20251022215000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022215000 +0000" stop="20251022235000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022235000 +0000" stop="20251023015000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023015000 +0000" stop="20251023035000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023035000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a07f73b8">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022155000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">Airing Next: : ITF W100 Wrexham: Christie F / Miyazaki Y L - Primorac I / Tran D @ 22 Oct 11:50 AM ET @ Oct 22 10:50 AM CT</title>
+  </programme>
+  <programme start="20251022155000 +0000" stop="20251022185000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">● : ITF W100 Wrexham: Christie F / Miyazaki Y L - Primorac I / Tran D @ 22 Oct 11:50 AM ET ●</title>
+  </programme>
+  <programme start="20251022185000 +0000" stop="20251022205000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022205000 +0000" stop="20251022225000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022225000 +0000" stop="20251023005000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023005000 +0000" stop="20251023025000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023025000 +0000" stop="20251023045000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023045000 +0000" stop="20251023050000 +0000" channel="dummy.epg__fc526ec0">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022160000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">Airing Next: : ATP Vienna: Michelsen A / Peers J - Cabral F / Miedler L @ 22 Oct 12:00 PM ET @ Oct 22 11:00 AM CT</title>
+  </programme>
+  <programme start="20251022160000 +0000" stop="20251022190000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">● : ATP Vienna: Michelsen A / Peers J - Cabral F / Miedler L @ 22 Oct 12:00 PM ET ●</title>
+  </programme>
+  <programme start="20251022190000 +0000" stop="20251022210000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022210000 +0000" stop="20251022230000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022230000 +0000" stop="20251023010000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023010000 +0000" stop="20251023030000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023030000 +0000" stop="20251023050000 +0000" channel="dummy.epg__5713be35">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251022050000 +0000" stop="20251022231000 +0000" channel="dummy.epg__a8a79004">
+    <title lang="en">Airing Next: : ATP Challenger Sioux Falls: Draxl L / Schachter N - Banthia S / Hach Verdugo H @ 22 Oct 07:10 PM ET @ Oct 22 06:10 PM CT</title>
+  </programme>
+  <programme start="20251022231000 +0000" stop="20251023021000 +0000" channel="dummy.epg__a8a79004">
+    <title lang="en">● : ATP Challenger Sioux Falls: Draxl L / Schachter N - Banthia S / Hach Verdugo H @ 22 Oct 07:10 PM ET ●</title>
+  </programme>
+  <programme start="20251023021000 +0000" stop="20251023041000 +0000" channel="dummy.epg__a8a79004">
+    <title lang="en">No Programming Today.</title>
+  </programme>
+  <programme start="20251023041000 +0000" stop="20251023050000 +0000" channel="dummy.epg__a8a79004">
     <title lang="en">No Programming Today.</title>
   </programme>
   <programme start="20251022050000 +0000" stop="20251022070000 +0000" channel="dummy.epg__7361fc53">
