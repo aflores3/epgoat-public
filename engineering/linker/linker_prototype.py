@@ -52,106 +52,106 @@ except Exception:
 # ----------------------------
 ALLOWED_CHANNEL_PATTERNS = [
     # Major Sports Leagues
-    (r'^BIG10\+ \d{2}:', 'BIG10+'),
-    (r'^Bundesliga \d{2}:', 'Bundesliga'),
-    (r'^EPL \d{2}:?', 'EPL'),  # Colon optional
-    (r'^EPL\d{2}', 'EPL'),  # No space variant
-    (r'^La Liga \d{2}:', 'La Liga'),
-    (r'^Ligue1 \d{2}:', 'Ligue1'),
-    (r'^Serie A \d{2}:', 'Serie A'),
-    (r'^Scottish Premiership \d{2}:', 'Scottish Premiership'),
-    (r'^SPFL \d{2}:', 'SPFL'),
+    # Pattern format: \s* = optional spaces, \d+ = flexible digits, \s*:? = optional space before optional colon
+    (r'^BIG10\+\s+\d+\s*:', 'BIG10+'),
+    (r'^Bundesliga\s+\d+\s*:', 'Bundesliga'),
+    (r'^EPL\s*\d+\s*:?', 'EPL'),  # Handles "EPL 01:" or "EPL01"
+    (r'^La Liga\s+\d+\s*:', 'La Liga'),
+    (r'^Ligue1\s+\d+\s*:', 'Ligue1'),
+    (r'^Serie A\s+\d+\s*:', 'Serie A'),
+    (r'^Scottish Premiership\s+\d+\s*:', 'Scottish Premiership'),
+    (r'^SPFL\s+\d+\s*:', 'SPFL'),
 
     # Basketball Leagues
-    (r'^NBA \d{2}:', 'NBA'),
-    (r'^NCAAB \d{2}:', 'NCAAB'),
-    (r'^NCAAW B \d{2}:', 'NCAAW B'),
-    (r'^NJCAA Men\'s Basketball \d{2}:', 'NJCAA Men\'s Basketball'),
-    (r'^NJCAA Women\'s Basketball \d{2}:', 'NJCAA Women\'s Basketball'),
-    (r'^USA Real NBA \d{2}:', 'USA Real NBA'),
-    (r'^WNBA \d{2}:?', 'WNBA'),  # Colon optional
-    (r'^FIBA \d{2}:', 'FIBA'),
+    (r'^NBA\s+\d+\s*:', 'NBA'),
+    (r'^NCAAB\s+\d+\s*:', 'NCAAB'),
+    (r'^NCAAW B\s+\d+\s*:', 'NCAAW B'),
+    (r'^NJCAA Men\'s Basketball\s+\d+\s*:', 'NJCAA Men\'s Basketball'),
+    (r'^NJCAA Women\'s Basketball\s+\d+\s*:', 'NJCAA Women\'s Basketball'),
+    (r'^USA Real NBA\s+\d+\s*:', 'USA Real NBA'),
+    (r'^WNBA\s+\d+\s*:?', 'WNBA'),  # Colon optional
+    (r'^FIBA\s+\d+\s*:', 'FIBA'),
 
     # Football (American)
-    (r'^NCAAF \d{2,3}:?', 'NCAAF'),  # Colon optional (no space before colon due to normalization)
-    (r'^NFL \d{2}:?', 'NFL'),  # Colon optional
-    (r'^NFL Game Pass \d+', 'NFL Game Pass'),
-    (r'^NFL Multi Screen / HDR \d+', 'NFL Multi Screen'),
-    (r'^NFL\s+\|\s+\d{2}', 'NFL |'),
+    (r'^NCAAF\s+\d+\s*:?', 'NCAAF'),  # Handles "NCAAF 01 :" or "NCAAF 01:"
+    (r'^NFL\s+\d+\s*:?', 'NFL'),
+    (r'^NFL Game Pass\s+\d+', 'NFL Game Pass'),
+    (r'^NFL Multi Screen / HDR\s+\d+', 'NFL Multi Screen'),
+    (r'^NFL\s+\|\s+\d+', 'NFL |'),
 
     # Hockey Leagues
-    (r'^NHL \d{2}:', 'NHL'),
-    (r'^NHL \| \d{2}:', 'NHL |'),
-    (r'^USA Real NHL \d{2}:', 'USA Real NHL'),
-    (r'^WHL \d{2}:', 'WHL'),
-    (r'^QMJHL \d{2}:', 'QMJHL'),
-    (r'^OHL \d{2}:', 'OHL'),
+    (r'^NHL\s+\d+\s*:', 'NHL'),
+    (r'^NHL\s+\|\s+\d+\s*:', 'NHL |'),
+    (r'^USA Real NHL\s+\d+\s*:', 'USA Real NHL'),
+    (r'^WHL\s+\d+\s*:', 'WHL'),
+    (r'^QMJHL\s+\d+\s*:', 'QMJHL'),
+    (r'^OHL\s+\d+\s*:', 'OHL'),
 
     # Baseball Leagues
-    (r'^MLB \d{2}:', 'MLB'),
-    (r'^MiLB \d{2}:', 'MiLB'),
-    (r'^MILB \d{2}:', 'MILB'),
-    (r'^USA Real MLB \d{2}:', 'USA Real MLB'),
+    (r'^MLB\s+\d+\s*:', 'MLB'),
+    (r'^MiLB\s+\d+\s*:', 'MiLB'),
+    (r'^MILB\s+\d+\s*:', 'MILB'),
+    (r'^USA Real MLB\s+\d+\s*:', 'USA Real MLB'),
 
     # Soccer/Football (International)
-    (r'^MLS \d{2}:?', 'MLS'),  # Colon optional (no space before colon due to normalization)
-    (r'^MLS \d{1,3} \|', 'MLS'),  # MLS with pipe separator
-    (r'^MLS NEXT PRO \d{2}', 'MLS NEXT PRO'),
-    (r'^MLS Espanolⓧ \d{2}', 'MLS Espanol'),
-    (r'^USA \| MLS \d{2}', 'USA | MLS'),
-    (r'^USA Soccer\d{2}:', 'USA Soccer'),
-    (r'^FA Cup \d{2}', 'FA Cup'),
-    (r'^EFL\d{2}', 'EFL'),
-    (r'^Super League \+ \d{2}', 'Super League'),
-    (r'^UEFA Champions League \d{2}:', 'UEFA Champions League'),
-    (r'^UEFA Europa League \d{2}:', 'UEFA Europa League'),
-    (r'^UEFA Europa Conf\. League \d{2}:', 'UEFA Europa Conf League'),
-    (r'^UEFA/FIFA \d{2}', 'UEFA/FIFA'),
-    (r'^GAAGO:GAME \d{2}', 'GAAGO'),  # No spaces around colon due to normalization
-    (r'^LOI GAME \d{2}', 'LOI'),
-    (r'^National League TV \d{2}', 'National League TV'),
+    (r'^MLS\s+\d+\s*:?', 'MLS'),  # Handles "MLS 01 :" or "MLS 01:"
+    (r'^MLS\s+\d+\s+\|', 'MLS'),  # MLS with pipe separator
+    (r'^MLS NEXT PRO\s+\d+', 'MLS NEXT PRO'),
+    (r'^MLS Espanolⓧ\s+\d+', 'MLS Espanol'),
+    (r'^USA\s+\|\s+MLS\s+\d+', 'USA | MLS'),
+    (r'^USA Soccer\d+\s*:', 'USA Soccer'),
+    (r'^FA Cup\s+\d+', 'FA Cup'),
+    (r'^EFL\d+', 'EFL'),
+    (r'^Super League\s+\+\s+\d+', 'Super League'),
+    (r'^UEFA Champions League\s+\d+\s*:', 'UEFA Champions League'),
+    (r'^UEFA Europa League\s+\d+\s*:', 'UEFA Europa League'),
+    (r'^UEFA Europa Conf\. League\s+\d+\s*:', 'UEFA Europa Conf League'),
+    (r'^UEFA/FIFA\s+\d+', 'UEFA/FIFA'),
+    (r'^GAAGO\s*:\s*GAME\s+\d+', 'GAAGO'),  # Handles "GAAGO : GAME 01" or "GAAGO:GAME 01"
+    (r'^LOI GAME\s+\d+', 'LOI'),
+    (r'^National League TV\s+\d+', 'National League TV'),
 
     # Streaming Services
-    (r'^DAZN BE \d{2}:', 'DAZN BE'),
-    (r'^DAZN CA \d+:?', 'DAZN CA'),  # No leading zeros, colon optional
-    (r'^ESPN\+ \d+:?', 'ESPN+'),  # Colon optional
-    (r'^Fanatiz \d{2}:', 'Fanatiz'),
-    (r'^Flo Football \d{2}:', 'Flo Football'),
-    (r'^Flo Racing \d{2}:', 'Flo Racing'),
-    (r'^Flo Sports \d{2,4}:', 'Flo Sports'),
-    (r'^Paramount\+ \d{2,3}:?', 'Paramount+'),  # Colon optional (no space before colon)
-    (r'^Peacock \d{2}:', 'Peacock'),
-    (r'^Prime US \d{2}:', 'Prime US'),
-    (r'^SEC\+ / ACC extra \d{2}', 'SEC+/ACC extra'),
-    (r'^Fubo Sports Network \d{2}', 'Fubo Sports Network'),
-    (r'^Sportsnet\+ \d{2}:?', 'Sportsnet+'),  # Colon optional
-    (r'^TSN\+ \d{2}:', 'TSN+'),
+    (r'^DAZN BE\s+\d+\s*:', 'DAZN BE'),
+    (r'^DAZN CA\s+\d+\s*:?', 'DAZN CA'),  # Colon optional
+    (r'^ESPN\+\s+\d+\s*:?', 'ESPN+'),  # Colon optional
+    (r'^Fanatiz\s+\d+\s*:', 'Fanatiz'),
+    (r'^Flo Football\s+\d+\s*:', 'Flo Football'),
+    (r'^Flo Racing\s+\d+\s*:', 'Flo Racing'),
+    (r'^Flo Sports\s+\d+\s*:', 'Flo Sports'),
+    (r'^Paramount\+\s+\d+\s*:?', 'Paramount+'),  # Handles "Paramount+ 01:" or "Paramount+ 01 :"
+    (r'^Peacock\s+\d+\s*:', 'Peacock'),
+    (r'^Prime US\s+\d+\s*:', 'Prime US'),
+    (r'^SEC\+\s+/\s+ACC extra\s+\d+', 'SEC+/ACC extra'),
+    (r'^Fubo Sports Network\s+\d+', 'Fubo Sports Network'),
+    (r'^Sportsnet\+\s+\d+\s*:?', 'Sportsnet+'),
+    (r'^TSN\+\s+\d+\s*:', 'TSN+'),
 
     # International Streaming
-    (r'^MAX NL \d{2,3}:', 'MAX NL'),
-    (r'^MAX SE \d{2,3}:', 'MAX SE'),
-    (r'^MAX USA \d{2}:', 'MAX USA'),
-    (r'^Viaplay NL \d{2}:', 'Viaplay NL'),
-    (r'^Viaplay SE \d{2}:', 'Viaplay SE'),
-    (r'^Viaplay NO \d+', 'Viaplay NO'),  # No colon
-    (r'^TV2 NO \d{2}:', 'TV2 NO'),
-    (r'^Tv4 Play SE \d{2}:', 'Tv4 Play SE'),
-    (r'^Sky Sports\+ \|', 'Sky Sports+'),
-    (r'^Sky Tennis\+ \|', 'Sky Tennis+'),
-    (r'^Setanta Sports \d{2}:', 'Setanta Sports'),
+    (r'^MAX NL\s+\d+\s*:', 'MAX NL'),
+    (r'^MAX SE\s+\d+\s*:', 'MAX SE'),
+    (r'^MAX USA\s+\d+\s*:', 'MAX USA'),
+    (r'^Viaplay NL\s+\d+\s*:', 'Viaplay NL'),
+    (r'^Viaplay SE\s+\d+\s*:', 'Viaplay SE'),
+    (r'^Viaplay NO\s+\d+', 'Viaplay NO'),  # No colon
+    (r'^TV2 NO\s+\d+\s*:', 'TV2 NO'),
+    (r'^Tv4 Play SE\s+\d+\s*:', 'Tv4 Play SE'),
+    (r'^Sky Sports\+\s+\|', 'Sky Sports+'),
+    (r'^Sky Tennis\+\s+\|', 'Sky Tennis+'),
+    (r'^Setanta Sports\s+\d+\s*:', 'Setanta Sports'),
 
     # Tennis and Combat Sports
-    (r'^Tennis \d{2}:', 'Tennis'),
-    (r'^Tennis TV \| Event \d{2}', 'Tennis TV'),
-    (r'^UFC \d{2}', 'UFC'),
-    (r'^TrillerTV Event \d{2}', 'TrillerTV'),
-    (r'^Matchroom Event \d+', 'Matchroom'),
+    (r'^Tennis\s+\d+\s*:', 'Tennis'),
+    (r'^Tennis TV\s+\|\s+Event\s+\d+', 'Tennis TV'),
+    (r'^UFC\s+\d+', 'UFC'),
+    (r'^TrillerTV Event\s+\d+', 'TrillerTV'),
+    (r'^Matchroom Event\s+\d+', 'Matchroom'),
 
     # Other Sports
-    (r'^LIVE EVENT \d{2}', 'LIVE EVENT'),
-    (r'^Dirtvision:EVENT \d{2}', 'Dirtvision'),  # No spaces around colon due to normalization
-    (r'^Clubber \d{2}', 'Clubber'),
-    (r'^NCAA Softball \d{2}:', 'NCAA Softball')
+    (r'^LIVE EVENT\s+\d+', 'LIVE EVENT'),
+    (r'^Dirtvision\s*:\s*EVENT\s+\d+', 'Dirtvision'),  # Handles "Dirtvision : EVENT 01"
+    (r'^Clubber\s+\d+', 'Clubber'),
+    (r'^NCAA Softball\s+\d+\s*:', 'NCAA Softball')
 ]
 
 # ----------------------------
@@ -174,10 +174,11 @@ def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None
     """
     Check if name matches an allowed channel pattern.
     Returns (matched, channel_family_name, regex_match_object)
+
+    Note: Patterns handle flexible spacing around colons (e.g., "NCAAF 01:" or "NCAAF 01 :")
     """
     n = (name or "").strip()
-    # allow “  : ” or “ :” before the colon
-    n = re.sub(r"\s+:\s*", ":", n)
+    # Colon normalization removed - patterns now handle flexible spacing
     for family_name, rx in CHANNEL_PATTERNS:
         m = rx.match(n)
         if m:
