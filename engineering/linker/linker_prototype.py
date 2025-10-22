@@ -95,7 +95,7 @@ ALLOWED_CHANNEL_PATTERNS = [
 
     # Soccer/Football (International)
     (r'^MLS \d{2} :?', 'MLS'),  # Colon optional
-    (r'^MLS \d{1,3} \|', 'MLS')
+    (r'^MLS \d{1,3} \|', 'MLS'),  # MLS with pipe separator
     (r'^MLS NEXT PRO \d{2}', 'MLS NEXT PRO'),
     (r'^MLS Espanolⓧ \d{2}', 'MLS Espanol'),
     (r'^USA \| MLS \d{2}', 'USA | MLS'),
