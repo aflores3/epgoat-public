@@ -85,6 +85,7 @@ ALLOWED_CHANNEL_PATTERNS = [
     (r'^UEFA Europa League \d{2}:', 'UEFA Europa League'),
     (r'^Viaplay NL \d{2}:', 'Viaplay NL'),
     (r'^Viaplay SE \d{2}:', 'Viaplay SE'),
+    (r'^MLS \d{1,3} \|', 'MLS')
 ]
 
 # ----------------------------
