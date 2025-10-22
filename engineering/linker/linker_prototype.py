@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 """
-EPGOAT Linker Prototype — Prefix-only, API-OFF, filename-driven scheduling
+EPGOAT Linker Prototype — Pattern-based, API-OFF, filename-driven scheduling
 
-- Strictly filters channels by an allowed prefix list (tolerant of numbers/symbols after the prefix).
+- Filters channels by pattern matching on numbered channel families (e.g., "ESPN+ 01:", "NHL 15:").
 - No external APIs (by design). Event timing is parsed from the channel name if present.
 - Event detection = "payload beyond the shell":
-    Shell = <PREFIX> + optional separators + optional number + optional badge + optional delimiter.
+    Shell = <FAMILY> + <NUMBER> + <DELIMITER>.
     If anything meaningful remains after removing the shell, it's an Event (unless it's in a fluff ignore-list).
 - Special-case: "Peacock 01: Studio" is treated as GENERIC per your instruction; otherwise "Studio/Pregame/Postgame"
   payloads are treated as Event (Q3).
@@ -47,48 +47,72 @@ except Exception:
     ZoneInfo = None
 
 # ----------------------------
-# Allowed prefixes (exactly from your list)
+# Allowed channel patterns (pattern-based matching for numbered channels)
+# These patterns match specific numbered channel families instead of just prefixes
 # ----------------------------
-ALLOWED_PREFIXES = [
-    "Now HK Sports 4K 1 UHD","NCAAF","NFL Game Pass","LIVE EVENT","[PPV EVENT","NBA","USA Real NBA",
-    "NHL","NHL |","USA Real NHL","MLB","USA Real MLB","MiLB","MLS","MLS NEXT PRO","USA | MLS",
-    "MLS Espanol","USA Soccer","WNBA","Paramount+","ESPN+","SEC+ / ACC extra","Flo Sports","Flo Racing",
-    "Flo Football","Prime US","Peacock","US|Peacock PPV","BIG10+","NCAAB","NCAAW B","NCAA Softball",
-    "NJCAA Men's Basketball","Dirtvision : EVENT","Fanatiz","Serie A","La Liga","Bundesliga","Ligue1",
-    "UEFA Champions League","UEFA Europa League","UEFA Europa Conf. League","UEFA/FIFA",
-    "National League TV","FRIENDLY","TrillerTV Event","Hub Sports","Hub Premier","STAN SPORT EVENT",
-    "Tennis","Tennis TV","GAAGO : GAME","LOI GAME","Clubber","FIBA","Setanta Sports",
+ALLOWED_CHANNEL_PATTERNS = [
+    # Sports streaming services with numbered channels
+    (r'^BIG10\+ \d{2}:', 'BIG10+'),
+    (r'^Bundesliga \d{2}:', 'Bundesliga'),
+    (r'^DAZN BE \d{2}:', 'DAZN BE'),
+    (r'^DAZN CA \d+:', 'DAZN CA'),  # No leading zeros
+    (r'^EPL \d{2}:', 'EPL'),
+    (r'^ESPN\+ \d+', 'ESPN+'),  # Various separators, no consistent colon
+    (r'^Fanatiz \d{2}:', 'Fanatiz'),
+    (r'^Flo Football \d{2}:', 'Flo Football'),
+    (r'^Flo Racing \d{2}:', 'Flo Racing'),
+    (r'^Flo Sports \d{2,4}:', 'Flo Sports'),  # 01-1000 range
+    (r'^La Liga \d{2}:', 'La Liga'),
+    (r'^Ligue1 \d{2}:', 'Ligue1'),
+    (r'^LIVE EVENT \d{2}:', 'LIVE EVENT'),
+    (r'^MAX NL \d{2,3}:', 'MAX NL'),
+    (r'^MAX SE \d{2,3}:', 'MAX SE'),
+    (r'^MAX USA \d{2}:', 'MAX USA'),
+    (r'^MLB \d{2}:', 'MLB'),
+    (r'^MLS \d{2}:', 'MLS'),
+    (r'^NBA \d{2}:', 'NBA'),
+    (r'^NCAAF \d{2,3}:', 'NCAAF'),
+    (r'^NFL \d{2}:', 'NFL'),
+    (r'^NHL \d{2}:', 'NHL'),
+    (r'^NHL \| \d{2}:', 'NHL |'),  # Alternative format with pipe
+    (r'^Paramount\+ \d{2,3}:', 'Paramount+'),
+    (r'^Peacock \d{2}:', 'Peacock'),
+    (r'^Serie A \d{2}:', 'Serie A'),
+    (r'^Sportsnet\+ \d{2}:', 'Sportsnet+'),
+    (r'^Tennis \d{2}:', 'Tennis'),
+    (r'^TSN\+ \d{2}:', 'TSN+'),
+    (r'^UEFA Champions League \d{2}:', 'UEFA Champions League'),
+    (r'^UEFA Europa League \d{2}:', 'UEFA Europa League'),
+    (r'^Viaplay NL \d{2}:', 'Viaplay NL'),
+    (r'^Viaplay SE \d{2}:', 'Viaplay SE'),
 ]
 
 # ----------------------------
-# Prefix regex compilation (module-level for performance)
+# Pattern regex compilation (module-level for performance)
 # We compile these once at import time to avoid repeated regex compilation
 # ----------------------------
-def build_prefix_regex(prefix: str) -> re.Pattern:
+def build_channel_regex(pattern: str) -> re.Pattern:
     """
-    Build a tolerant regex pattern for a prefix that allows:
-    - Optional separators (space, |, /)
-    - Optional numbers (ASCII or full-width Unicode)
-    - Optional badge characters (●)
-    - Optional delimiters (:, -, |, full-width colon)
-    - Trailing spaces
+    Build a regex pattern for numbered channel matching.
+    The pattern already includes the numbering format, so we just add
+    optional trailing content after the channel identifier.
     """
-    esc = re.escape(prefix)
-    tail = r"(?:\s*[|/])?\s*(?:[0-9\uFF10-\uFF19]+)?\s*(?:●)?\s*(?:[:\-\|\uFF1A])?\s*"
-    return re.compile(r"^" + esc + tail, re.IGNORECASE | re.UNICODE)
+    # Add trailing pattern to match everything after the channel identifier
+    full_pattern = pattern + r'\s*'
+    return re.compile(full_pattern, re.IGNORECASE | re.UNICODE)
 
-PREFIX_PATTERNS = [(p, build_prefix_regex(p)) for p in ALLOWED_PREFIXES]
+CHANNEL_PATTERNS = [(name, build_channel_regex(pattern)) for pattern, name in ALLOWED_CHANNEL_PATTERNS]
 
 def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None]:
     """
-    Check if name starts with an allowed prefix.
-    Returns (matched, prefix_name, regex_match_object)
+    Check if name matches an allowed channel pattern.
+    Returns (matched, channel_family_name, regex_match_object)
     """
     n = (name or "").strip()
-    for prefix, rx in PREFIX_PATTERNS:
+    for family_name, rx in CHANNEL_PATTERNS:
         m = rx.match(n)
         if m:
-            return True, prefix, m
+            return True, family_name, m
     return False, None, None
 
 # ----------------------------
@@ -368,17 +392,17 @@ class ChannelClassification:
         self.tokens = tokens
         self.warnings = warnings
 
-def classify_channel(name: str, matched_prefix: str, match_obj: re.Match | None) -> ChannelClassification:
+def classify_channel(name: str, matched_family: str, match_obj: re.Match | None) -> ChannelClassification:
     """
     Classify channel as "generic" or "event" based on payload.
-    
+
     Returns ChannelClassification with diagnostic information.
     """
     warnings = []
-    
+
     if not match_obj:
         # Shouldn't happen if called correctly, but handle gracefully
-        warnings.append("no_prefix_match")
+        warnings.append("no_pattern_match")
         return ChannelClassification("generic", "", 0, [], warnings)
 
     payload = name[match_obj.end():].strip()
@@ -392,22 +416,22 @@ def classify_channel(name: str, matched_prefix: str, match_obj: re.Match | None)
     payload_upper = re.sub(r"\s+", " ", payload).strip().upper()
 
     # Check special-case generic exceptions
-    if matched_prefix and matched_prefix in SPECIAL_GENERIC_EXCEPTIONS:
-        if payload_upper in SPECIAL_GENERIC_EXCEPTIONS[matched_prefix]:
+    if matched_family and matched_family in SPECIAL_GENERIC_EXCEPTIONS:
+        if payload_upper in SPECIAL_GENERIC_EXCEPTIONS[matched_family]:
             warnings.append("special_generic_exception")
             return ChannelClassification("generic", payload, shell_end, [], warnings)
 
     # Extract tokens for analysis
     tokens = [t for t in re.split(r"[^A-Z0-9]+", payload_upper) if t]
-    
+
     # If payload consists only of fluff tokens, treat as generic
     if tokens and all(t in FLUFF_TOKENS for t in tokens):
         warnings.append("all_fluff_tokens")
         return ChannelClassification("generic", payload, shell_end, tokens, warnings)
 
-    # Check for ambiguous case: prefix only with no distinguishing payload
-    if matched_prefix and payload_upper == matched_prefix.upper():
-        warnings.append("ambiguous_prefix_only")
+    # Check for ambiguous case: family only with no distinguishing payload
+    if matched_family and payload_upper == matched_family.upper():
+        warnings.append("ambiguous_family_only")
 
     # Otherwise, it's an event (even without a parseable time)
     return ChannelClassification("event", payload, shell_end, tokens, warnings)
@@ -532,7 +556,7 @@ def deduplicate_entries(entries: list[M3UEntry]) -> tuple[list[M3UEntry], dict]:
 # Main
 # ----------------------------
 def main():
-    ap = argparse.ArgumentParser(description="EPGOAT filename-only EPG (APIs off, prefix filter)")
+    ap = argparse.ArgumentParser(description="EPGOAT filename-only EPG (APIs off, pattern-based channel filter)")
     ap.add_argument("--m3u", required=True, help="Path/URL to input M3U")
     ap.add_argument("--out-xmltv", required=True, help="XMLTV output path")
     ap.add_argument("--csv", help="Audit CSV path")
@@ -583,18 +607,18 @@ def main():
     if dedup_stats["duplicates_removed"] > 0:
         print(f"[info] Removed {dedup_stats['duplicates_removed']} duplicate URLs", file=sys.stderr)
 
-    # Filter by allowed prefixes and cache match results for performance
+    # Filter by allowed channel patterns and cache match results for performance
     processed = []
-    match_data = []  # Store (prefix, match_obj) tuples
-    
+    match_data = []  # Store (family_name, match_obj) tuples
+
     for e in entries:
         disp = (e.tvg_name or e.display_name or "").strip()
-        ok, pref, match_obj = match_prefix_and_shell(disp)
+        ok, family_name, match_obj = match_prefix_and_shell(disp)
         if ok:
             processed.append(e)
-            match_data.append((pref, match_obj))
+            match_data.append((family_name, match_obj))
 
-    print(f"[info] Filtered to {len(processed)} channels matching allowed prefixes", file=sys.stderr)
+    print(f"[info] Filtered to {len(processed)} channels matching allowed channel patterns", file=sys.stderr)
 
     # Build programmes for each channel
     programs = {}
@@ -609,16 +633,16 @@ def main():
     
     # Store classifications for CSV output
     classifications = []
-    
-    for e, (pref, match_obj) in zip(processed, match_data):
+
+    for e, (family_name, match_obj) in zip(processed, match_data):
         cid = chan_id(e)
         disp = (e.tvg_name or e.display_name or e.tvg_id or cid).strip()
 
         # Classify using cached match object
-        classif = classify_channel(disp, pref, match_obj)
+        classif = classify_channel(disp, family_name, match_obj)
         classifications.append(classif)
-        
-        if "ambiguous_prefix_only" in classif.warnings:
+
+        if "ambiguous_family_only" in classif.warnings:
             stats["ambiguous"] += 1
 
         if classif.classification == "generic":
@@ -679,7 +703,7 @@ def main():
     print(f"Total M3U entries:           {len(entries) + dedup_stats['duplicates_removed']}", file=sys.stderr)
     print(f"Duplicates removed:          {dedup_stats['duplicates_removed']}", file=sys.stderr)
     print(f"After deduplication:         {len(entries)}", file=sys.stderr)
-    print(f"Matched allowed prefixes:    {len(processed)}", file=sys.stderr)
+    print(f"Matched channel patterns:    {len(processed)}", file=sys.stderr)
     print(f"", file=sys.stderr)
     print(f"Channel Classifications:", file=sys.stderr)
     print(f"  Generic channels:          {stats['generic']}", file=sys.stderr)
@@ -708,22 +732,22 @@ def main():
                 w = csv.writer(f)
                 w.writerow([
                     "tvg_id", "tvg_name", "display_name", "group_title", "tvg_logo", "url",
-                    "channel_id", "matched_prefix", "classification", "payload",
+                    "channel_id", "matched_family", "classification", "payload",
                     "shell_end_position", "tokens_found", "parse_warnings",
                     "has_time", "event_start_ct", "event_duration_min", "target_date"
                 ])
-                for e, (pref, _), classif in zip(processed, match_data, classifications):
+                for e, (family_name, _), classif in zip(processed, match_data, classifications):
                     cid = chan_id(e)
                     disp = (e.tvg_name or e.display_name or e.tvg_id or cid).strip()
-                    
+
                     # Try to parse time for events
                     start_ct = None
                     if classif.classification == "event":
                         start_ct = try_parse_time(classif.payload, year=tgt_date.year, central=central, date_context=tgt_date)
-                    
+
                     w.writerow([
                         e.tvg_id, e.tvg_name, e.display_name, e.group_title, e.tvg_logo, e.url,
-                        cid, pref, classif.classification, classif.payload.strip(),
+                        cid, family_name, classif.classification, classif.payload.strip(),
                         classif.shell_end,
                         ",".join(classif.tokens) if classif.tokens else "",
                         ",".join(classif.warnings) if classif.warnings else "",
