@@ -63,6 +63,11 @@ def matches_known_pattern(channel_name):
             return True
     return False
 
+def is_vod_url(url):
+    """Check if URL is VOD (movie or series) content."""
+    url_lower = url.lower()
+    return '/movie/' in url_lower or '/series/' in url_lower
+
 def main():
     if len(sys.argv) != 2:
         print("Usage: python verify_channels.py <path_to_m3u_file>")
@@ -71,6 +76,8 @@ def main():
     m3u_file = sys.argv[1]
 
     total_channels = 0
+    vod_channels = 0
+    live_tv_channels = 0
     matched_channels = 0
     unmatched_channels = []
     family_counts = defaultdict(int)
@@ -78,28 +85,61 @@ def main():
     print("Analyzing M3U file...\n")
 
     with open(m3u_file, 'r', encoding='utf-8', errors='ignore') as f:
-        for line in f:
-            if line.startswith('#EXTINF:-1,'):
-                total_channels += 1
-                channel_name = extract_channel_name(line)
+        lines = f.readlines()
 
-                if channel_name:
-                    family = extract_family_prefix(channel_name)
-                    family_counts[family] += 1
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.startswith('#EXTINF:-1,'):
+            total_channels += 1
+            channel_name = extract_channel_name(line)
 
-                    if matches_known_pattern(channel_name):
-                        matched_channels += 1
-                    else:
-                        unmatched_channels.append(channel_name)
+            # Get the URL from the next non-empty, non-comment line
+            url = ""
+            j = i + 1
+            while j < len(lines):
+                next_line = lines[j].strip()
+                if next_line and not next_line.startswith('#'):
+                    url = next_line
+                    break
+                j += 1
+
+            # Skip VOD content (movies and series)
+            if is_vod_url(url):
+                vod_channels += 1
+                i = j + 1
+                continue
+
+            # This is a live TV channel
+            live_tv_channels += 1
+
+            if channel_name:
+                family = extract_family_prefix(channel_name)
+                family_counts[family] += 1
+
+                if matches_known_pattern(channel_name):
+                    matched_channels += 1
+                else:
+                    unmatched_channels.append(channel_name)
+
+            i = j + 1
+        else:
+            i += 1
 
     # Print results
     print(f"{'='*80}")
-    print(f"CHANNEL VERIFICATION REPORT")
+    print(f"CHANNEL VERIFICATION REPORT (Live TV Only)")
     print(f"{'='*80}\n")
 
     print(f"Total channels found: {total_channels}")
-    print(f"Matched by known patterns: {matched_channels} ({matched_channels/total_channels*100:.1f}%)")
-    print(f"Unmatched channels: {len(unmatched_channels)} ({len(unmatched_channels)/total_channels*100:.1f}%)\n")
+    print(f"  - VOD (movies/series): {vod_channels}")
+    print(f"  - Live TV channels: {live_tv_channels}")
+    print(f"")
+    if live_tv_channels > 0:
+        print(f"Live TV Analysis:")
+        print(f"  Matched by known patterns: {matched_channels} ({matched_channels/live_tv_channels*100:.1f}%)")
+        print(f"  Unmatched channels: {len(unmatched_channels)} ({len(unmatched_channels)/live_tv_channels*100:.1f}%)")
+    print()
 
     print(f"{'='*80}")
     print(f"CHANNEL FAMILIES (sorted by count)")
@@ -121,9 +161,11 @@ def main():
 
     print(f"\n{'='*80}")
 
-    if len(unmatched_channels) == 0:
-        print("✓ All channels matched! The list appears comprehensive.")
-    elif len(unmatched_channels) / total_channels < 0.05:
+    if live_tv_channels == 0:
+        print("⚠ No live TV channels found!")
+    elif len(unmatched_channels) == 0:
+        print("✓ All live TV channels matched! The list appears comprehensive.")
+    elif len(unmatched_channels) / live_tv_channels < 0.05:
         print("✓ List looks good! Less than 5% unmatched (likely non-sports channels).")
     else:
         print("⚠ Review unmatched channels above - may need to add more families.")

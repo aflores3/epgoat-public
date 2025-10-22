@@ -313,6 +313,11 @@ def validate_url(url: str) -> bool:
         return False
     return True
 
+def is_vod_url(url: str) -> bool:
+    """Check if URL is VOD (movie or series) content."""
+    url_lower = url.lower()
+    return '/movie/' in url_lower or '/series/' in url_lower
+
 # ----------------------------
 # M3U parsing
 # ----------------------------
@@ -346,7 +351,7 @@ def parse_extinf_attrs(info_line: str):
 def parse_m3u(path: str):
     """
     Parse M3U file or URL.
-    Returns list of M3UEntry objects.
+    Returns list of M3UEntry objects (Live TV only, excludes VOD).
     """
     lines = []
     if path.startswith("http://") or path.startswith("https://"):
@@ -358,6 +363,7 @@ def parse_m3u(path: str):
             lines = f.read().splitlines()
 
     entries = []
+    vod_count = 0
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -372,12 +378,20 @@ def parse_m3u(path: str):
                 url = nxt
                 break
             if url and validate_url(url):
-                entries.append(M3UEntry(attrs, disp, url))
+                # Skip VOD content (movies and series)
+                if is_vod_url(url):
+                    vod_count += 1
+                else:
+                    entries.append(M3UEntry(attrs, disp, url))
             elif url:
                 print(f"[warn] Skipping entry with invalid URL: {url[:50]}...", file=sys.stderr)
             i = j
         else:
             i += 1
+
+    if vod_count > 0:
+        print(f"[info] Filtered out {vod_count} VOD entries (movies/series)", file=sys.stderr)
+
     return entries
 
 # ----------------------------
@@ -597,7 +611,7 @@ def main():
     # Parse M3U
     try:
         entries = parse_m3u(args.m3u)
-        print(f"[info] Found {len(entries)} total entries in M3U", file=sys.stderr)
+        print(f"[info] Found {len(entries)} live TV entries in M3U (VOD excluded)", file=sys.stderr)
     except Exception as ex:
         print(f"ERROR: Failed to parse M3U: {ex}", file=sys.stderr)
         sys.exit(1)
@@ -698,9 +712,9 @@ def main():
 
     # Print statistics summary
     print("\n" + "="*60, file=sys.stderr)
-    print("PROCESSING SUMMARY", file=sys.stderr)
+    print("PROCESSING SUMMARY (Live TV Only)", file=sys.stderr)
     print("="*60, file=sys.stderr)
-    print(f"Total M3U entries:           {len(entries) + dedup_stats['duplicates_removed']}", file=sys.stderr)
+    print(f"Live TV entries found:       {len(entries) + dedup_stats['duplicates_removed']}", file=sys.stderr)
     print(f"Duplicates removed:          {dedup_stats['duplicates_removed']}", file=sys.stderr)
     print(f"After deduplication:         {len(entries)}", file=sys.stderr)
     print(f"Matched channel patterns:    {len(processed)}", file=sys.stderr)
