@@ -109,6 +109,8 @@ def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None
     Returns (matched, channel_family_name, regex_match_object)
     """
     n = (name or "").strip()
+    # allow “  : ” or “ :” before the colon
+    n = re.sub(r"\s+:\s*", ":", n)
     for family_name, rx in CHANNEL_PATTERNS:
         m = rx.match(n)
         if m:
