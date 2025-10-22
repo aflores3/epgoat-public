@@ -95,6 +95,7 @@ ALLOWED_CHANNEL_PATTERNS = [
 
     # Soccer/Football (International)
     (r'^MLS \d{2} :?', 'MLS'),  # Colon optional
+    (r'^MLS \d{1,3} \|', 'MLS')
     (r'^MLS NEXT PRO \d{2}', 'MLS NEXT PRO'),
     (r'^MLS Espanolⓧ \d{2}', 'MLS Espanol'),
     (r'^USA \| MLS \d{2}', 'USA | MLS'),
@@ -150,7 +151,7 @@ ALLOWED_CHANNEL_PATTERNS = [
     (r'^LIVE EVENT \d{2}', 'LIVE EVENT'),
     (r'^Dirtvision : EVENT \d{2}', 'Dirtvision'),
     (r'^Clubber \d{2}', 'Clubber'),
-    (r'^NCAA Softball \d{2}:', 'NCAA Softball'),
+    (r'^NCAA Softball \d{2}:', 'NCAA Softball')
 ]
 
 # ----------------------------
@@ -175,6 +176,8 @@ def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None
     Returns (matched, channel_family_name, regex_match_object)
     """
     n = (name or "").strip()
+    # allow “  : ” or “ :” before the colon
+    n = re.sub(r"\s+:\s*", ":", n)
     for family_name, rx in CHANNEL_PATTERNS:
         m = rx.match(n)
         if m:
