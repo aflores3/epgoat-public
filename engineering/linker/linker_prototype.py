@@ -107,7 +107,7 @@ ALLOWED_CHANNEL_PATTERNS = [
     (r'^UEFA Europa League \d{2}:', 'UEFA Europa League'),
     (r'^UEFA Europa Conf\. League \d{2}:', 'UEFA Europa Conf League'),
     (r'^UEFA/FIFA \d{2}', 'UEFA/FIFA'),
-    (r'^GAAGO : GAME \d{2}', 'GAAGO'),
+    (r'^GAAGO:GAME \d{2}', 'GAAGO'),  # No spaces around colon due to normalization
     (r'^LOI GAME \d{2}', 'LOI'),
     (r'^National League TV \d{2}', 'National League TV'),
 
@@ -149,7 +149,7 @@ ALLOWED_CHANNEL_PATTERNS = [
 
     # Other Sports
     (r'^LIVE EVENT \d{2}', 'LIVE EVENT'),
-    (r'^Dirtvision : EVENT \d{2}', 'Dirtvision'),
+    (r'^Dirtvision:EVENT \d{2}', 'Dirtvision'),  # No spaces around colon due to normalization
     (r'^Clubber \d{2}', 'Clubber'),
     (r'^NCAA Softball \d{2}:', 'NCAA Softball')
 ]
