@@ -3,3 +3,10 @@
 epg_audit.csv
 *.m3u
 *.m3u8
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
