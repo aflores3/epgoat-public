@@ -170,19 +170,34 @@ def build_channel_regex(pattern: str) -> re.Pattern:
 
 CHANNEL_PATTERNS = [(name, build_channel_regex(pattern)) for pattern, name in ALLOWED_CHANNEL_PATTERNS]
 
-def match_prefix_and_shell(name: str) -> tuple[bool, str | None, re.Match | None]:
+def match_prefix_and_shell(name: str, verbose: bool = False) -> tuple[bool, str | None, re.Match | None]:
     """
     Check if name matches an allowed channel pattern.
     Returns (matched, channel_family_name, regex_match_object)
 
     Note: Patterns handle flexible spacing around colons (e.g., "NCAAF 01:" or "NCAAF 01 :")
+
+    Args:
+        name: Channel name to match
+        verbose: If True, print debug information about matching attempts
     """
     n = (name or "").strip()
+
+    if verbose and not n:
+        print(f"[DEBUG] Empty channel name after strip", file=sys.stderr)
+        return False, None, None
+
     # Colon normalization removed - patterns now handle flexible spacing
     for family_name, rx in CHANNEL_PATTERNS:
         m = rx.match(n)
         if m:
+            if verbose:
+                print(f"[DEBUG] Matched '{n}' → Family: {family_name}", file=sys.stderr)
             return True, family_name, m
+
+    if verbose:
+        print(f"[DEBUG] No pattern matched for: '{n}'", file=sys.stderr)
+
     return False, None, None
 
 # ----------------------------
@@ -648,6 +663,7 @@ def main():
     ap.add_argument("--date", help="Target date YYYY-MM-DD (default: today in tz)")
     ap.add_argument("--event-duration-min", type=int, default=180, help="Event duration when time is known (minutes)")
     ap.add_argument("--max-event-duration-min", type=int, default=360, help="Maximum event duration (minutes)")
+    ap.add_argument("--verbose", "-v", action="store_true", help="Enable verbose debug logging")
     args = ap.parse_args()
 
     # Validate Python version and timezone support
@@ -697,7 +713,7 @@ def main():
 
     for e in entries:
         disp = (e.tvg_name or e.display_name or "").strip()
-        ok, family_name, match_obj = match_prefix_and_shell(disp)
+        ok, family_name, match_obj = match_prefix_and_shell(disp, verbose=args.verbose)
         if ok:
             processed.append(e)
             match_data.append((family_name, match_obj))
